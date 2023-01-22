@@ -1,11 +1,12 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
-import App from './App'
-import './index.css'
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { initializeApp } from "firebase/app";
+import { signInWithPopup  } from 'firebase/auth';
+import App from "./App";
+import { Elevation, Imagine } from "./pages";
+import "./index.css";
+
 
 
 const router = createBrowserRouter([
@@ -14,11 +15,13 @@ const router = createBrowserRouter([
     element: <App />,
   },
   {
-  path: "/main",
-  element: <div>Hello world!</div>
-  }
-  
-
+    path: "/elevation",
+    element: <Elevation />,
+  },
+  {
+    path: "/imagine",
+    element: <Imagine />,
+  },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
@@ -26,9 +29,6 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <RouterProvider router={router} />
   </React.StrictMode>
 );
-
-
-
 
 // ReactDOM.createRoot(document.getElementById('root')).render(
 //   <React.StrictMode>

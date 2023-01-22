@@ -1,19 +1,29 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
+import { useState, useEffect } from "react";
+import { onAuthStateChanged, auth } from "./firebase";
 import "./App.css";
-import Header from "./components/Header";
-import Sidebar from "./components/Sidebar";
-import Content from "./components/Content";
+
+import Dashboard from "./pages/Dashboard";
+import Gate from "./pages/Gate";
+
 function App() {
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        const uid = user.uid;
+        setUser(user);
+        console.log("uid", uid);
+      } else {
+        setUser(null);
+      }
+    });
+  }, []);
+
   return (
-    <div className="mx-auto flex flex-col space-y-6">      
-      <Header />      
-      <div id="content" className="grid gap-12 md:grid-cols-[210px_2fr]">        
-        <Sidebar />        
-        <Content />        
-      </div>
-      
-    </div>
+    <>
+      {user ? <Dashboard /> : <Gate />}
+    </>
   );
 }
 
