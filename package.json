@@ -9,9 +9,25 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@radix-ui/colors": "^0.1.8",
+    "@radix-ui/react-dropdown-menu": "^2.0.2",
+    "@radix-ui/react-icons": "^1.1.1",
+    "@radix-ui/react-navigation-menu": "^1.1.1",
     "@tabler/icons": "^1.119.0",
+    "classnames": "^2.3.2",
+    "dotenv": "^16.0.3",
+    "dotenv-expand": "^10.0.0",
+    "firebase": "^9.16.0",
+    "flowbite": "^1.6.2",
+    "flowbite-react": "^0.3.7",
+    "localforage": "^1.10.0",
+    "match-sorter": "^6.3.1",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-firebase-auth": "^1.0.3",
+    "react-firebase-hooks": "^5.1.1",
+    "react-router-dom": "^6.7.0",
+    "sort-by": "^1.2.0"
   },
   "devDependencies": {
     "@types/react": "^18.0.26",

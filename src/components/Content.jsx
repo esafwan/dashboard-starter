@@ -1,25 +1,12 @@
 import { IconBrandUnity, IconPlus } from "@tabler/icons";
+import Title from "./global/page/title";
 
 function Content() {
   return (
     <main className="flex w-full flex-1 flex-col overflow-hidden">
       <div className="grid items-start gap-8">
         {/* title + button */}
-        <div className="flex justify-between px-2">
-          <div className="grid gap-1">
-            <h1 className="text-2xl font-bold tracking-wide text-slate-900">
-              Imagine Feeds
-            </h1>
-            <p className="text-neutral-500">Limitless imaginations, in no time.</p>
-          </div>
-          <button
-            className="relative inline-flex h-9 items-center rounded-md border border-transparent bg-slate-900 px-4 py-2 text-sm font-medium text-white hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:ring-offset-2"
-            data-bcup-haslogintext="no"
-          >
-            <IconPlus className="mr-2" size={18} strokeWidth={2} />            
-            Imagine
-          </button>
-        </div>
+        <Title title="Imagine Feed" subtitle="Limitless imaginations, in no time." />        
         {/* title + button */}
         {/* empty */}
         <div>
@@ -38,7 +25,7 @@ function Content() {
               >
                  <IconPlus className="mr-2" size={16} strokeWidth={2} />            
                
-                New post
+                Imagine
               </button>
             </div>
           </div>
