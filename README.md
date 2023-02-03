@@ -1,4 +1,4 @@
-# archangel
+# React Tailwind Dashboard Starter
 Starter Dashboard using react, tailwind, browser-router & vite.
 
 
