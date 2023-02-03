@@ -1,5 +1,5 @@
 # archangel
- AI tool to simplify architects work. 
+Starter Dashboard using react, tailwind, browser-router & vite.
 
 
 ![Screenshot 2023-01-23 at 2 20 46 AM](https://user-images.githubusercontent.com/246454/213939748-ba824496-94f0-4fcb-ac70-855987c6f3cd.png)
