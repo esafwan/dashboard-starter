@@ -5,35 +5,11 @@ import {
   DotFilledIcon,
   CheckIcon,
 } from "@radix-ui/react-icons";
-import { signOut, auth, onAuthStateChanged } from "./../../../firebase";
 import "./styles.css";
 
 const AccountNav = () => {
   const [bookmarksChecked, setBookmarksChecked] = useState(true);
-  const [person, setPerson] = useState("pedro");
-
-  const checkUser = async () => {
-    const response = await auth.onAuthStateChanged((user) => {
-      console.log(user);
-    });
-  };
-
-  const logOut = async () => {
-    const response = await signOut(auth);
-  };
-
-  useEffect(() => {
-    onAuthStateChanged(auth, (user) => {
-      if (user) {
-        // User is signed in, see docs for a list of available properties
-        // https://firebase.google.com/docs/reference/js/firebase.User
-        const uid = user.uid;
-        console.log("uid", uid);
-      } else {
-        console.log("user is logged out");
-      }
-    });
-  }, []);
+  const [person, setPerson] = useState("");
 
   return (
     <DropdownMenu.Root>
@@ -45,7 +21,10 @@ const AccountNav = () => {
 
       <DropdownMenu.Portal>
         <DropdownMenu.Content className="DropdownMenuContent" sideOffset={5}>
-          <DropdownMenu.Item className="DropdownMenuItem" onClick={checkUser}>
+          <DropdownMenu.Item
+            className="DropdownMenuItem"
+            onClick={console.log("ok")}
+          >
             Profile
           </DropdownMenu.Item>
           <DropdownMenu.Item className="DropdownMenuItem">
@@ -88,10 +67,10 @@ const AccountNav = () => {
               Logout
             </DropdownMenu.RadioItem>
           </DropdownMenu.RadioGroup> */}
-          <DropdownMenu.Item className="DropdownMenuItem" onClick={checkUser}>
+          <DropdownMenu.Item className="DropdownMenuItem" onClick={console.log("ok")}>
             Edit Profile
           </DropdownMenu.Item>
-          <DropdownMenu.Item className="DropdownMenuItem" onClick={logOut}>
+          <DropdownMenu.Item className="DropdownMenuItem" onClick={console.log("ok")}>
             Logout
           </DropdownMenu.Item>
 

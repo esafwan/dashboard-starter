@@ -1,8 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { initializeApp } from "firebase/app";
-import { signInWithPopup  } from 'firebase/auth';
 import App from "./App";
 import { Elevation, Imagine } from "./pages";
 import "./index.css";
