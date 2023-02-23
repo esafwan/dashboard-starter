@@ -7,10 +7,10 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={
-        <Dashboard>Dashboard</Dashboard>
+        <Dashboard></Dashboard>
       }/>
       <Route path="/dashboard" element={
-        <Dashboard>Dashboard</Dashboard>
+        <Dashboard></Dashboard>
       }/>
       <Route path="/imagine" element={
         <Dashboard>Imagine</Dashboard>

@@ -1,5 +1,4 @@
-// import { useEffect } from "react";
-// import { IconMenu2 } from "@tabler/icons";
+import {Link} from "react-router-dom";
 import AccountNav from "./../Layouts/Dashboard/AccountNav";
 function Header() {
 
@@ -15,24 +14,14 @@ function Header() {
             <span className="hidden font-bold sm:inline-block">Imagine</span>
           </a>
           <nav className="hidden gap-6 md:flex">
-            <a
+            <Link
               className="flex items-center text-lg font-semibold text-slate-600 sm:text-sm"
-              href="#"
+              to="#"
               data-bcup-haslogintext="no"
-              onClick={console.log("ok")}
             >
               Account
-            </a>
-            <a
-              className="flex items-center text-lg font-semibold text-slate-600 sm:text-sm cursor-not-allowed opacity-80"
-              href="#"
-              data-bcup-haslogintext="no"
-              onClick={console.log("ok")}
-            >
-              Logout
-            </a>
+            </Link>
           </nav>
-          <div></div>
         </div>
         <AccountNav />
       </div>
