@@ -4,10 +4,14 @@ import {
   HamburgerMenuIcon,
   CheckIcon,
 } from "@radix-ui/react-icons";
+import { signOut, auth} from "./../../../firebase";
 import "./styles.css";
 
 const AccountNav = () => {
   const [bookmarksChecked, setBookmarksChecked] = useState(true);
+  const logOut=async ()=>{
+    await signOut(auth);
+  }
   return (
     <DropdownMenu.Root>
       <DropdownMenu.Trigger asChild>
@@ -66,7 +70,7 @@ const AccountNav = () => {
           <DropdownMenu.Item className="DropdownMenuItem">
             Edit Profile
           </DropdownMenu.Item>
-          <DropdownMenu.Item className="DropdownMenuItem">
+          <DropdownMenu.Item className="DropdownMenuItem" onClick={logOut}>
             Logout
           </DropdownMenu.Item>
 
