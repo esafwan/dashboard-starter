@@ -1,4 +1,4 @@
-import { NavVertical } from "../global/Nav";
+import { NavVertical } from "./../Nav";
 function Sidebar() {
   return (
     <aside className="hidden w-[200px] flex-col md:flex">

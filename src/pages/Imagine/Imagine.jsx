@@ -1,8 +1,8 @@
 import "./../App.css";
-import Header from "../components/Header";
-import Sidebar from "../components/Sidebar";
-import Content from "../components/Content";
-function Dashboard() {
+import Header from "../../components/Header";
+import Sidebar from "../../components/Sidebar";
+import Content from "../../components/Content";
+function Imagine() {
   return (
     <div className="mx-auto flex flex-col space-y-6">      
       <Header />      
@@ -15,4 +15,4 @@ function Dashboard() {
   );
 }
 
-export default Dashboard;
+export default Imagine;

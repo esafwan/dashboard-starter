@@ -1,5 +1,5 @@
 import { IconBrandUnity, IconPlus } from "@tabler/icons";
-import Title from "./global/page/title";
+import Title from "./Title";
 
 function Content() {
   return (

@@ -1,6 +1,6 @@
-import { useEffect } from "react";
-import { IconMenu2 } from "@tabler/icons";
-import AccountNav from "./../components/global/AccountNav";
+// import { useEffect } from "react";
+// import { IconMenu2 } from "@tabler/icons";
+import AccountNav from "./../Layouts/Dashboard/AccountNav";
 function Header() {
 
   return (

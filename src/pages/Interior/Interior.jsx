@@ -1,8 +1,8 @@
 import { useState } from "react";
 
-import Header from "./../components/Header";
-import Sidebar from "./../components/Sidebar";
-import Content from "./../components/Content";
+import Header from "../../components/Header";
+import Sidebar from "../../components/Sidebar";
+import Content from "../../components/Content";
 function App() {
   return (
     <div className="mx-auto flex flex-col space-y-6">      
