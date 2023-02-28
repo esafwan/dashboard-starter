@@ -10,7 +10,7 @@ const Menu=()=>{
         width="32" 
         height="32"
         onClick={()=>setDisplay((currentState)=>!currentState)}/>
-        {display && (<div className="bg-white absolute top-14 p-5 w-80 drop-shadow-xl"
+        {display && (<div className="bg-white absolute top-14 p-5 w-64 drop-shadow-xl"
         onClick={()=>setDisplay(false)}>
             <NavVertical/>
         </div>)}

@@ -30,7 +30,7 @@ function Header({setDirection}) {
           </nav>
         </div>
         <div className="flex">
-            <select className="mx-10" id="language" onChange={()=>setDirection(document.querySelector("#language").value)}>
+            <select className="md:mx-10" id="language" onChange={()=>setDirection(document.querySelector("#language").value)}>
               <option value="ltr">english</option>
               <option value="rtl">arabic</option>
             </select>
