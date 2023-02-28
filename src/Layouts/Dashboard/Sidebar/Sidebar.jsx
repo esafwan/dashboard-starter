@@ -1,7 +1,7 @@
 import { NavVertical } from "./../Nav";
 function Sidebar() {
   return (
-    <aside className="hidden w-[200px] flex-col md:flex">
+    <aside className="w-[200px] flex-col md:flex hidden bg-white">
       <NavVertical />
     </aside>
   );
