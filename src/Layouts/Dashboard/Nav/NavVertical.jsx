@@ -1,7 +1,6 @@
 import {
-  IconHomeInfinity,
   IconHome2,
-  IconArmchair,
+  IconSchool,
   IconWand,
   IconSettings2,
   IconHistory,
@@ -23,15 +22,15 @@ function NavVertical() {
         </NavLink>
         <NavLink to="/imagine" data-bcup-haslogintext="no" className={({isActive})=>isActive?active:inactive}>
             <IconWand className="mr-2" />
-            <span>Imagine</span>
+            <span>Write</span>
         </NavLink>
         <NavLink to="/elevation" data-bcup-haslogintext="no" className={({isActive})=>isActive?active:inactive}>
             <Icon3dCubeSphere className="mr-2" />
-            <span>Elevation </span>
+            <span>Analyze</span>
         </NavLink>
         <NavLink to="/interior" data-bcup-haslogintext="no" className={({isActive})=>isActive?active:inactive}>
-            <IconArmchair className="mr-2" />
-            <span>Interior</span>
+            <IconSchool className="mr-2" />
+            <span>Explain</span>
         </NavLink>        
         <NavLink to="/history" data-bcup-haslogintext="no" className={({isActive})=>isActive?active:inactive}>
             <IconHistory className="mr-2" />

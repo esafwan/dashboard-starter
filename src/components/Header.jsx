@@ -1,7 +1,8 @@
 import {Link} from "react-router-dom";
 import AccountNav from "./../Layouts/Dashboard/AccountNav";
-function Header() {
+import Menu from "./../Layouts/Dashboard/MobileNav/Menu";
 
+function Header() {
   return (
     <header className="sticky top-0 z-40 bg-white pz-4 ">
       <div className="flex h-16 items-center justify-between border-b border-b-slate-200 py-4 ">
@@ -13,6 +14,7 @@ function Header() {
           >
             <span className="hidden font-bold sm:inline-block">Imagine</span>
           </a>
+          <Menu/>
           <nav className="hidden gap-6 md:flex">
             <Link
               className="flex items-center text-lg font-semibold text-slate-600 sm:text-sm"
