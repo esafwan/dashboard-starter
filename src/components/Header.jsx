@@ -25,7 +25,9 @@ function Header() {
             </Link>
           </nav>
         </div>
-        <AccountNav />
+        <span className="hidden md:flex">
+          <AccountNav />
+        </span>
       </div>
     </header>
   );
