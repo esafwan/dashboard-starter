@@ -8,5 +8,12 @@ export const TRANSLATIONS_ARAB={
     "write":"يكتب",
     "explain":"يشرح",
     "history":"تاريخ",
-    "settings":"إعدادات"
-}
+    "settings":"إعدادات",
+    "account":"حساب",
+    "profile":"حساب تعريفي",
+    "billing":"الفواتير",
+    "enable beta":"تمكين بيتا",
+    "user settings":"إعدادات المستخدم",
+    "edit profile":"تعديل الملف الشخصي",
+    "logout":"تسجيل خروج"
+};

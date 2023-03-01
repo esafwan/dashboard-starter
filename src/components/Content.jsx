@@ -3,12 +3,12 @@ import Title from "./Title";
 import {useTranslation} from "react-i18next";
 
 function Content() {
-  const {t,i18n}=useTranslation();
+  const {t}=useTranslation();
   return (
     <main className="flex w-full flex-1 flex-col overflow-hidden">
       <div className="grid items-start gap-8">
         {/* title + button */}
-        <Title title={t("title")} subtitle="Limitless imaginations, in no time." />        
+        <Title title={t("title")} subtitle={t("subtitle")} />        
         {/* title + button */}
         {/* empty */}
         <div>
@@ -17,9 +17,9 @@ function Content() {
               <div className="flex h-20 w-20 items-center justify-center rounded-full bg-slate-100">
                 <IconBrandUnity size={40} stroke={1.5} />
               </div>
-              <h2 className="mt-6 text-xl font-semibold">No imaginations.</h2>
+              <h2 className="mt-6 text-xl font-semibold">{t("content_none")}</h2>
               <p className="mt-3 mb-8 text-center text-sm font-normal leading-6 text-slate-700">
-                You don't have any imaginations. Start imagining.
+                {t("content_none_description")}
               </p>
               <button
                 className="relative inline-flex h-9 items-center rounded-md border px-4 py-2 text-sm font-medium border-slate-200 bg-white text-brand-900 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-slate-500 focus:ring-offset-2"

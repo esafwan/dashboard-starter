@@ -1,4 +1,5 @@
 import { useState} from "react";
+import {useTranslation} from "react-i18next";
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 import {
   HamburgerMenuIcon,
@@ -8,6 +9,7 @@ import "./styles.css";
 
 const AccountNav = () => {
   const [bookmarksChecked, setBookmarksChecked] = useState(true);
+  const {t}=useTranslation();
   return (
     <DropdownMenu.Root>
       <DropdownMenu.Trigger asChild>
@@ -21,10 +23,10 @@ const AccountNav = () => {
           <DropdownMenu.Item
             className="DropdownMenuItem"
           >
-            Profile
+            {t("profile")}
           </DropdownMenu.Item>
           <DropdownMenu.Item className="DropdownMenuItem">
-            Billing
+            {t("billing")}
           </DropdownMenu.Item>
 
           <DropdownMenu.Separator className="DropdownMenuSeparator" />
@@ -37,13 +39,13 @@ const AccountNav = () => {
             <DropdownMenu.ItemIndicator className="DropdownMenuItemIndicator">
               <CheckIcon />
             </DropdownMenu.ItemIndicator>
-            Enable Beta <div className="RightSlot">⌘+B</div>
+            {t("enable beta")} <div className="RightSlot">⌘+B</div>
           </DropdownMenu.CheckboxItem>
 
           <DropdownMenu.Separator className="DropdownMenuSeparator" />
 
           <DropdownMenu.Label className="DropdownMenuLabel">
-            User Settings
+            {t("user settings")}
           </DropdownMenu.Label>
           {/* <DropdownMenu.RadioGroup value={person} onValueChange={setPerson}>
             <DropdownMenu.RadioItem
@@ -64,10 +66,10 @@ const AccountNav = () => {
             </DropdownMenu.RadioItem>
           </DropdownMenu.RadioGroup> */}
           <DropdownMenu.Item className="DropdownMenuItem">
-            Edit Profile
+            {t("edit profile")}
           </DropdownMenu.Item>
           <DropdownMenu.Item className="DropdownMenuItem">
-            Logout
+            {t("logout")}
           </DropdownMenu.Item>
 
           <DropdownMenu.Arrow className="DropdownMenuArrow" />
