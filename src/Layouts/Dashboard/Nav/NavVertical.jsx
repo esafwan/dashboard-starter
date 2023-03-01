@@ -20,27 +20,27 @@ function NavVertical() {
       <div>
         <NavLink to="/dashboard" data-bcup-haslogintext="no" className={({isActive})=>isActive?active:inactive}>
             <IconHome2 className="mr-2" />
-            <span>{t("dashboard")}</span>
+            <span className="ml-3 text-2xl md:text-sm">{t("dashboard")}</span>
         </NavLink>
         <NavLink to="/imagine" data-bcup-haslogintext="no" className={({isActive})=>isActive?active:inactive}>
             <IconWand className="mr-2" />
-            <span>{t("write")}</span>
+            <span className="ml-3 text-2xl md:text-sm">{t("write")}</span>
         </NavLink>
         <NavLink to="/elevation" data-bcup-haslogintext="no" className={({isActive})=>isActive?active:inactive}>
             <Icon3dCubeSphere className="mr-2" />
-            <span>{t("analyze")}</span>
+            <span className="ml-3 text-2xl md:text-sm">{t("analyze")}</span>
         </NavLink>
         <NavLink to="/interior" data-bcup-haslogintext="no" className={({isActive})=>isActive?active:inactive}>
             <IconSchool className="mr-2" />
-            <span>{t("explain")}</span>
+            <span className="ml-3 text-2xl md:text-sm">{t("explain")}</span>
         </NavLink>        
         <NavLink to="/history" data-bcup-haslogintext="no" className={({isActive})=>isActive?active:inactive}>
             <IconHistory className="mr-2" />
-            <span>{t("history")}</span>
+            <span className="ml-3 text-2xl md:text-sm">{t("history")}</span>
         </NavLink>
         <NavLink to="/settings" data-bcup-haslogintext="no" className={({isActive})=>isActive?active:inactive}>
             <IconSettings2 className="mr-2" />
-            <span>{t("settings")}</span>
+            <span className="ml-3 text-2xl md:text-sm">{t("settings")}</span>
         </NavLink>
       </div>
     </nav>
