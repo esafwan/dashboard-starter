@@ -1,3 +1,3 @@
 export const TRANSLATIONS_EN={
-    "Imagine feed":"Imagine feed"
+    "title":"Imagine feed"
 };

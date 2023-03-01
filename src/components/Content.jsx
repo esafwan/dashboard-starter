@@ -8,7 +8,7 @@ function Content() {
     <main className="flex w-full flex-1 flex-col overflow-hidden">
       <div className="grid items-start gap-8">
         {/* title + button */}
-        <Title title={t("Imagine feed")} subtitle="Limitless imaginations, in no time." />        
+        <Title title={t("title")} subtitle="Limitless imaginations, in no time." />        
         {/* title + button */}
         {/* empty */}
         <div>
