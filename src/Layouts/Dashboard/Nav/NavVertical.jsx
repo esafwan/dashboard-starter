@@ -7,8 +7,10 @@ import {
   Icon3dCubeSphere
 } from "@tabler/icons";
 import {NavLink} from "react-router-dom";
+import {useTranslation} from "react-i18next";
 
 function NavVertical() {
+  const {t}=useTranslation();
   const active =
     "group flex items-center rounded-md px-3 py-2 text-sm font-medium text-slate-800 hover:bg-slate-100 bg-slate-200 mb-1-slate-200";
   const inactive =
@@ -18,27 +20,27 @@ function NavVertical() {
       <div>
         <NavLink to="/dashboard" data-bcup-haslogintext="no" className={({isActive})=>isActive?active:inactive}>
             <IconHome2 className="mr-2" />
-            <span>Dashboard </span>
+            <span>{t("dashboard")}</span>
         </NavLink>
         <NavLink to="/imagine" data-bcup-haslogintext="no" className={({isActive})=>isActive?active:inactive}>
             <IconWand className="mr-2" />
-            <span>Write</span>
+            <span>{t("write")}</span>
         </NavLink>
         <NavLink to="/elevation" data-bcup-haslogintext="no" className={({isActive})=>isActive?active:inactive}>
             <Icon3dCubeSphere className="mr-2" />
-            <span>Analyze</span>
+            <span>{t("analyze")}</span>
         </NavLink>
         <NavLink to="/interior" data-bcup-haslogintext="no" className={({isActive})=>isActive?active:inactive}>
             <IconSchool className="mr-2" />
-            <span>Explain</span>
+            <span>{t("explain")}</span>
         </NavLink>        
         <NavLink to="/history" data-bcup-haslogintext="no" className={({isActive})=>isActive?active:inactive}>
             <IconHistory className="mr-2" />
-            <span>History</span>
+            <span>{t("history")}</span>
         </NavLink>
         <NavLink to="/settings" data-bcup-haslogintext="no" className={({isActive})=>isActive?active:inactive}>
             <IconSettings2 className="mr-2" />
-            <span>Settings</span>
+            <span>{t("settings")}</span>
         </NavLink>
       </div>
     </nav>
