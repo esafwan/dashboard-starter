@@ -15,5 +15,9 @@ export const TRANSLATIONS_ARAB={
     "enable beta":"تمكين بيتا",
     "user settings":"إعدادات المستخدم",
     "edit profile":"تعديل الملف الشخصي",
-    "logout":"تسجيل خروج"
+    "logout":"تسجيل خروج",
+    "create":"خلق",
+    "writing":"كتابه",
+    "response":"استجابه",
+    "analyzing":"تحليل"
 };

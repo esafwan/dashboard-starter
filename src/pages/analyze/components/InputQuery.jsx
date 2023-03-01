@@ -1,14 +1,8 @@
-import React,{useState} from "react";
+import React from "react";
+import {useTranslation} from "react-i18next";
 
 function InputQuery({setAnalyzeText,submitAnalyze}){
-    // const handleCreate=()=>{
-    //     const queryText=document.getElementById("queryText").value;
-    //     // queryText && setQuery(queryText) && submitQuery();
-    //     if(queryText){
-    //         setQuery(queryText);
-    //         submitQuery();
-    //     }
-    // }
+    const {t}=useTranslation();
     const handleAnalyze=()=>{
         const analyzeText=document.getElementById("analyzeText").value;
         if(analyzeText){
@@ -18,7 +12,7 @@ function InputQuery({setAnalyzeText,submitAnalyze}){
     }
     return (
         <div className="h-full">
-            <div className="text-4xl font-bold">Analyze</div>
+            <div className="text-4xl font-bold">{t("analyze")}</div>
             <div className="flex flex-col p-5 mt-12 border border-black border-dashed rounded-md">
                 <textarea id="analyzeText"
                 defaultValue="The nation wants to know"
@@ -31,7 +25,7 @@ function InputQuery({setAnalyzeText,submitAnalyze}){
                     focus:ring-brand-500 focus:ring-offset-2"
                     onClick={handleAnalyze}
                     >
-                        Create</button>
+                        {t("create")}</button>
                 </div>
             </div>
         </div>

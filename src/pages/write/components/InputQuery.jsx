@@ -1,6 +1,8 @@
-import React,{useState} from "react";
+import React from "react";
+import {useTranslation} from "react-i18next";
 
 function InputQuery({setQuery,submitQuery}){
+    const {t}=useTranslation();
     const handleCreate=()=>{
         const queryText=document.getElementById("queryText").value;
         // queryText && setQuery(queryText) && submitQuery();
@@ -11,7 +13,7 @@ function InputQuery({setQuery,submitQuery}){
     }
     return (
         <div className="h-full">
-            <div className="text-4xl font-bold">Write</div>
+            <div className="text-4xl font-bold">{t("write")}</div>
             <div className="flex flex-col p-5 mt-12 border border-black border-dashed rounded-md">
                 <textarea id="queryText"
                 defaultValue="The nation wants to know"
@@ -23,7 +25,7 @@ function InputQuery({setQuery,submitQuery}){
                     text-white hover:bg-slate-700 focus:outline-none focus:ring-2 
                     focus:ring-brand-500 focus:ring-offset-2"
                     onClick={handleCreate}>
-                        Create</button>
+                        {t("create")}</button>
                 </div>
             </div>
         </div>

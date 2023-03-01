@@ -1,9 +1,11 @@
 import React,{useState} from "react";
+import {useTranslation} from "react-i18next";
 import InputQuery from "./components/InputQuery";
 import ResultScreen from "./components/ResultScreen";
 import LoadingScreen from "./../../components/LoadingScreen";
 
 function Write(){
+    const {t}=useTranslation();
     const [loading,setLoading]=useState(false);
     const [responseText,setResponseText]=useState(false);
     let query=undefined;
@@ -39,7 +41,7 @@ function Write(){
         // },5000);
     }
     if(loading)
-        return <LoadingScreen text="Writing ..."/>
+        return <LoadingScreen text={t("writing")}/>
     else if(responseText)
         return <ResultScreen text={responseText}/>
     return (<div className="overflow-hidden">

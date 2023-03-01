@@ -1,10 +1,12 @@
 import React,{useState} from "react";
+import {useTranslation} from "react-i18next";
 import InputQuery from "./components/InputQuery";
 import Modal from "./components/Modal";
 import LoadingScreen from "./../../components/LoadingScreen";
 
 function Analyze(){
     let analyzeText="";
+    const {t}=useTranslation();
     const [loading,setLoading]=useState(false);
     const [responseText,setResponseText]=useState("");
     const setAnalyzeText=(text)=>analyzeText=text;
@@ -40,7 +42,7 @@ function Analyze(){
         // },1000);
     }
     if(loading)
-        return <LoadingScreen text="Analyzing ..."/>
+        return <LoadingScreen text={`${t("analyzing")}...`}/>
     // else if(responseText)
     //     return (<Modal display="block">{responseText}</Modal>);
     return(
