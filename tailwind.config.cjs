@@ -7,6 +7,9 @@ module.exports = {
   ],
   theme: {
     extend: {},
+    boxShadow:{
+      none:"none"
+    }
   },
   plugins: [
     require('flowbite/plugin')
