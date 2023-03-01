@@ -2,6 +2,7 @@
 import {Routes,Route} from "react-router-dom";
 import Dashboard from "./Layouts/Dashboard/Dashboard";
 import Write from "./pages/write/Write";
+import Analyze from "./pages/analyze/Analyze";
 import "./App.css";
 
 function App() {
@@ -17,7 +18,7 @@ function App() {
         <Dashboard><Write/></Dashboard>
       }/>
       <Route path="/analyze" element={
-        <Dashboard>Elevation</Dashboard>
+        <Dashboard><Analyze/></Dashboard>
       }/>
       <Route path="/explain" element={
         <Dashboard>Interior</Dashboard>
