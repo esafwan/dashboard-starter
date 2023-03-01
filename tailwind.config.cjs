@@ -7,8 +7,8 @@ module.exports = {
   ],
   theme: {
     extend: {},
-    boxShadow:{
-      none:"none"
+    minHeight:{
+      "1/4":"25%"
     }
   },
   plugins: [
