@@ -5,8 +5,11 @@ import Sidebar from "./Sidebar/Sidebar";
 import Content from "./../../components/Content";
 
 function Dashboard({children}) {
-  const [language,setLanguage]=useState("en");
+  if(!localStorage.getItem("language"))
+    localStorage.setItem("language","en");
+  const [language,setLanguage]=useState(localStorage.getItem("language"));
   useEffect(()=>{
+    localStorage.setItem("language",language);
     i18n.changeLanguage(language)
   },[language])
   document.dir=language==="arab"?"rtl":"ltr";
