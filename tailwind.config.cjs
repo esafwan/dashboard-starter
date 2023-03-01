@@ -7,6 +7,9 @@ module.exports = {
   ],
   theme: {
     extend: {},
+    minHeight:{
+      "1/4":"25%"
+    }
   },
   plugins: [
     require('flowbite/plugin')

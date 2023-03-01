@@ -15,5 +15,9 @@ export const TRANSLATIONS_EN={
     "enable beta":"Enable Beta",
     "user settings":"User Settings",
     "edit profile":"Edit Profile",
-    "logout":"Logout"
+    "logout":"Logout",
+    "create":"Create",
+    "writing":"Writing",
+    "response":"Response",
+    "analyzing":"Analyzing"
 };

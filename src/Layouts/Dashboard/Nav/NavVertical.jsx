@@ -22,15 +22,15 @@ function NavVertical() {
             <IconHome2 className="mr-2" />
             <span className="mx-3 text-2xl md:text-sm">{t("dashboard")}</span>
         </NavLink>
-        <NavLink to="/imagine" data-bcup-haslogintext="no" className={({isActive})=>isActive?active:inactive}>
+        <NavLink to="/write" data-bcup-haslogintext="no" className={({isActive})=>isActive?active:inactive}>
             <IconWand className="mr-2" />
             <span className="mx-3 text-2xl md:text-sm">{t("write")}</span>
         </NavLink>
-        <NavLink to="/elevation" data-bcup-haslogintext="no" className={({isActive})=>isActive?active:inactive}>
+        <NavLink to="/analyze" data-bcup-haslogintext="no" className={({isActive})=>isActive?active:inactive}>
             <Icon3dCubeSphere className="mr-2" />
             <span className="mx-3 text-2xl md:text-sm">{t("analyze")}</span>
         </NavLink>
-        <NavLink to="/interior" data-bcup-haslogintext="no" className={({isActive})=>isActive?active:inactive}>
+        <NavLink to="/explain" data-bcup-haslogintext="no" className={({isActive})=>isActive?active:inactive}>
             <IconSchool className="mr-2" />
             <span className="mx-3 text-2xl md:text-sm">{t("explain")}</span>
         </NavLink>        
