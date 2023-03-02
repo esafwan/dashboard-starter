@@ -33,7 +33,16 @@ function NavVertical() {
         <NavLink to="/explain" data-bcup-haslogintext="no" className={({isActive})=>isActive?active:inactive}>
             <IconSchool className="mr-2" />
             <span className="mx-3 text-2xl md:text-sm">{t("explain")}</span>
-        </NavLink>        
+        </NavLink>
+        <NavLink to="/imagine" data-bcup-haslogintext="no" className={({isActive})=>isActive?active:inactive}>
+        <svg xmlns="http://www.w3.org/2000/svg" className="mr-2 icon icon-tabler icon-tabler-crystal-ball" width="24" height="24" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+          <path d="M6.73 17.018a8 8 0 1 1 10.54 0"></path>
+          <path d="M5 19a2 2 0 0 0 2 2h10a2 2 0 1 0 0 -4h-10a2 2 0 0 0 -2 2z"></path>
+          <path d="M11 7a3 3 0 0 0 -3 3"></path>
+        </svg>
+            <span className="mx-3 text-2xl md:text-sm">{t("Imagine")}</span>
+        </NavLink>       
         <NavLink to="/history" data-bcup-haslogintext="no" className={({isActive})=>isActive?active:inactive}>
             <IconHistory className="mr-2" />
             <span className="mx-3 text-2xl md:text-sm">{t("history")}</span>

@@ -23,6 +23,9 @@ function App() {
       <Route path="/explain" element={
         <Dashboard>Interior</Dashboard>
       }/>
+      <Route path="/imagine" element={
+          <Dashboard>Imagine</Dashboard>
+      }/>
       <Route path="/history" element={
         <Dashboard>History</Dashboard>
       }/>

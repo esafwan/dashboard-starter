@@ -20,5 +20,6 @@ export const TRANSLATIONS_ARAB={
     "writing":"كتابه",
     "response":"استجابه",
     "analyzing":"تحليل",
-    "Modify":"يُعدِّل"
+    "Modify":"يُعدِّل",
+    "Imagine":"يتصور"
 };
