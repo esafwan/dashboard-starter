@@ -5,10 +5,11 @@ function InputQuery({setQuery,submitQuery}){
     const {t}=useTranslation();
     const handleCreate=()=>{
         const queryText=document.getElementById("queryText").value;
+        const outputLang=document.getElementById("outputLang").value;
         // queryText && setQuery(queryText) && submitQuery();
         if(queryText){
             setQuery(queryText);
-            submitQuery();
+            submitQuery(outputLang);
         }
     }
     return (
@@ -19,9 +20,16 @@ function InputQuery({setQuery,submitQuery}){
                 defaultValue="Write a letter to your best performing employee congratulating him ..."
                 className="border-0 resize-none h-36"
                 style={{"boxShadow":"none"}}/>
-                <div className="mt-2">
-                    <button className="h-9 items-center rounded-md border float-right
-                    border-transparent bg-slate-900 px-4 py-2 text-sm font-medium 
+                <div className="mt-2 flex justify-end items-center">
+                    <label>
+                        <span className="text-xs mx-2">Output Language:</span>
+                        <select className="text-xs" id="outputLang">
+                            <option value="en">English</option>
+                            <option value="ar">Arabic</option>
+                        </select>
+                    </label>
+                    <button className="h-9 items-center rounded-md border
+                    border-transparent bg-slate-900 mx-4 px-4 py-2 text-sm font-medium 
                     text-white hover:bg-slate-700 focus:outline-none focus:ring-2 
                     focus:ring-brand-500 focus:ring-offset-2"
                     onClick={handleCreate}>
