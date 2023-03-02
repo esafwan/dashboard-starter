@@ -26,23 +26,21 @@ function Analyze(){
             body:JSON.stringify(data),
             redirect:"follow"
         }
-        // fetch("https://ml-text-ai.herokuapp.com/analyze",options)
-        // .then((res)=>res.json())
-        // .then((data)=>{
-        //     setResponseText(data);
-        //     console.log(text);
-        //     setLoading(false);
-        //     console.log(text);
-        // })
-        // .catch((err)=>console.log(err));
-        setTimeout(()=>{
-            setAnalyzeResponse({
-                "Tone": "Positive",
-                "Quality": "Informative",
-                "Grammar": 9
-            });
+        fetch("https://ml-text-ai.herokuapp.com/analyze",options)
+        .then((res)=>res.json())
+        .then((data)=>{
+            setAnalyzeResponse(data);
             setLoading(false);
-        },1000);
+        })
+        .catch((err)=>console.log(err));
+        // setTimeout(()=>{
+        //     setAnalyzeResponse({
+        //         "Tone": "Positive",
+        //         "Quality": "Informative",
+        //         "Grammar": 9
+        //     });
+        //     setLoading(false);
+        // },1000);
     }
     if(loading)
         return <LoadingScreen text={`${t("analyzing")}...`}/>

@@ -9,7 +9,6 @@ function Write(){
     const {t}=useTranslation();
     const {writeResponseText,setWriteResponseText}=useContext(PersistContext);
     const [loading,setLoading]=useState(false);
-    // const [responseText,setResponseText]=useState(false);
     let query=undefined;
     const setQuery=(text)=>query=text;
     const submitQuery=(outputLang)=>{
@@ -29,18 +28,17 @@ function Write(){
             body:JSON.stringify(data),
             redirect:"follow"
         }
-        // fetch("https://ml-text-ai.herokuapp.com/magic",options)
-        // .then((res)=>res.json())
-        // .then((data)=>{
-        //     setWriteResponseText(data.txt);
-        //     setLoading(false);
-        //     console.log(responseText);
-        // })
-        // .catch((err)=>console.log(err));
-        setTimeout(()=>{
-            setWriteResponseText(`Congratulations on your outstanding performance this past quarter! Your hard work and dedication have been exemplary and have had a positive impact on the entire team.`);
+        fetch("https://ml-text-ai.herokuapp.com/magic",options)
+        .then((res)=>res.json())
+        .then((data)=>{
+            setWriteResponseText(data.txt);
             setLoading(false);
-        },5000);
+        })
+        .catch((err)=>console.log(err));
+        // setTimeout(()=>{
+        //     setWriteResponseText(`Congratulations on your outstanding performance this past quarter! Your hard work and dedication have been exemplary and have had a positive impact on the entire team.`);
+        //     setLoading(false);
+        // },5000);
     }
     if(loading)
         return <LoadingScreen text={`${t("writing")}...`}/>
