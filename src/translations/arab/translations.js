@@ -21,5 +21,6 @@ export const TRANSLATIONS_ARAB={
     "response":"استجابه",
     "analyzing":"تحليل",
     "Modify":"يُعدِّل",
-    "Imagine":"يتصور"
+    "Imagine":"يتصور",
+    "Imagining":"تخيل"
 };

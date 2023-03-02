@@ -21,5 +21,6 @@ export const TRANSLATIONS_EN={
     "response":"Response",
     "analyzing":"Analyzing",
     "Modify":"Modify",
-    "Imagine":"Imagine"
+    "Imagine":"Imagine",
+    "Imagining":"Imagining"
 };
