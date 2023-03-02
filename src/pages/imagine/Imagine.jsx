@@ -1,4 +1,5 @@
-import React,{useState} from "react";
+import React,{useState,useContext} from "react";
+import PersistContext from "./../../Context/PersistContext";
 import {useTranslation} from "react-i18next";
 import InputQuery from "./components/InputQuery";
 import ResultScreen from "./components/ResultScreen";
@@ -6,10 +7,11 @@ import LoadingScreen from "./../../components/LoadingScreen";
 
 function Imagine(){
     const {t}=useTranslation();
+    const {imagineQuery,setImagineQuery,imagineResponseUrl,setImagineResponseUrl}=useContext(PersistContext);
     const [loading,setLoading]=useState(false);
-    const [responseImage,setResponseImage]=useState(false);
-    let query=undefined;
-    const setQuery=(text)=>query=text;
+    // const [responseImage,setResponseImage]=useState(false);
+    // let query=undefined;
+    // const setQuery=(text)=>query=text;
     const submitQuery=()=>{
         setLoading(true);
         const myHeaders = new Headers();
@@ -17,7 +19,7 @@ function Imagine(){
         myHeaders.append("Content-Type", "application/json");
         myHeaders.append("Access-Control-Allow-Origin", "https://ml-text-ai.herokuapp.com");
         const data={
-            "data":query,
+            "data":imagineQuery,
             "input_lang":"en",
             "output_lang":"en",
             "imagine":true
@@ -31,7 +33,7 @@ function Imagine(){
         fetch("https://ml-text-ai.herokuapp.com/v2/magic",options)
         .then((res)=>res.json())
         .then((data)=>{
-            setResponseImage(data["image"])
+            setImagineResponseUrl(data["image"])
             setLoading(false);
         })
         .catch((err)=>console.log(err));
@@ -43,9 +45,9 @@ function Imagine(){
 
     if(loading)
         return <LoadingScreen text={`${t("Imagining")}...`}/>
-    else if(responseImage)
-        return <ResultScreen url={responseImage}/>
-    return <InputQuery setQuery={setQuery} submitQuery={submitQuery}/>
+    else if(imagineResponseUrl)
+        return <ResultScreen url={imagineResponseUrl} setImagineResponseUrl={setImagineResponseUrl}/>
+    return <InputQuery imagineQuery={imagineQuery} setQuery={setImagineQuery} submitQuery={submitQuery}/>
 }
 
 export default Imagine;

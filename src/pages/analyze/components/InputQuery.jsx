@@ -1,7 +1,7 @@
 import React from "react";
 import {useTranslation} from "react-i18next";
 
-function InputQuery({setAnalyzeText,submitAnalyze}){
+function InputQuery({analyzeText,setAnalyzeText,submitAnalyze}){
     const {t}=useTranslation();
     const handleAnalyze=()=>{
         const analyzeText=document.getElementById("analyzeText").value;
@@ -15,7 +15,7 @@ function InputQuery({setAnalyzeText,submitAnalyze}){
             <div className="text-4xl font-bold">{t("analyze")}</div>
             <div className="flex flex-col p-5 mt-12 border border-black border-dashed rounded-md">
                 <textarea id="analyzeText"
-                defaultValue="A quick brown fox jumped over a ledge"
+                defaultValue={analyzeText}
                 className="border-0 resize-none h-36"
                 style={{"boxShadow":"none"}}/>
                 <div className="mt-2">

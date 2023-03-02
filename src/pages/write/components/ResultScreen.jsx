@@ -44,8 +44,9 @@ function ResultScreen({text,setResponseText}){
                 ref={textareaRef}
                 style={{
                     minHeight:MIN_TEXTAREA_HEIGHT,
+                    boxShadow:"none"
                 }}
-                className="resize-none overflow-hidden border-0"
+                className="resize-none overflow-hidden border-0 outline-none"
                 value={text}/>
             </div>
         </div>

@@ -1,15 +1,14 @@
-import React,{useState} from "react";
+import React,{useState,useContext} from "react";
+import PersistContext from "./../../Context/PersistContext";
 import {useTranslation} from "react-i18next";
 import InputQuery from "./components/InputQuery";
 import Modal from "./components/Modal";
 import LoadingScreen from "./../../components/LoadingScreen";
 
 function Analyze(){
-    let analyzeText="";
     const {t}=useTranslation();
+    const {analyzeText,setAnalyzeText,analyzeResponse,setAnalyzeResponse}=useContext(PersistContext);
     const [loading,setLoading]=useState(false);
-    const [responseText,setResponseText]=useState("");
-    const setAnalyzeText=(text)=>analyzeText=text;
     const submitAnalyze=()=>{
         setLoading(true);
         const myHeaders = new Headers();
@@ -27,27 +26,38 @@ function Analyze(){
             body:JSON.stringify(data),
             redirect:"follow"
         }
-        fetch("https://ml-text-ai.herokuapp.com/suggest",options)
-        .then((res)=>res.text())
-        .then((text)=>{
-            setResponseText(text);
-            console.log(text);
-            setLoading(false);
-            console.log(text);
-        })
-        .catch((err)=>console.log(err));
-        // setTimeout(()=>{
-        //     setResponseText(`<br>{<br>    &quot;Tone&quot;: &quot;Inspiring&quot;, <br>    &quot;Quality&quot;: &quot;Positive&quot;,<br>    &quot;Grammar&quot;: 9.5<br>}`);
+        // fetch("https://ml-text-ai.herokuapp.com/analyze",options)
+        // .then((res)=>res.json())
+        // .then((data)=>{
+        //     setResponseText(data);
+        //     console.log(text);
         //     setLoading(false);
-        // },1000);
+        //     console.log(text);
+        // })
+        // .catch((err)=>console.log(err));
+        setTimeout(()=>{
+            setAnalyzeResponse({
+                "Tone": "Positive",
+                "Quality": "Informative",
+                "Grammar": 9
+            });
+            setLoading(false);
+        },1000);
     }
     if(loading)
         return <LoadingScreen text={`${t("analyzing")}...`}/>
     return(
         <>
-            {responseText && <Modal display="fixed">{responseText}</Modal>}
+            {analyzeResponse && <Modal display="fixed" setAnalyzeResponse={setAnalyzeResponse}>
+                    <p>Tone : {analyzeResponse["Tone"]}</p>
+                    <p>Quality : {analyzeResponse["Quality"]}</p>
+                    <p>Grammar : {analyzeResponse["Grammar"]}</p>
+                </Modal>}
             {/* {responseText && window.alert(responseText)} */}
-            <InputQuery submitAnalyze={submitAnalyze} setAnalyzeText={setAnalyzeText}/>
+            <InputQuery 
+                analyzeText={analyzeText}
+                submitAnalyze={submitAnalyze} 
+                setAnalyzeText={setAnalyzeText}/>
         </>
         
     );
