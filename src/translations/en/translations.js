@@ -19,5 +19,10 @@ export const TRANSLATIONS_EN={
     "create":"Create",
     "writing":"Writing",
     "response":"Response",
-    "analyzing":"Analyzing"
+    "analyzing":"Analyzing",
+    "Modify":"Modify",
+    "Imagine":"Imagine",
+    "Imagining":"Imagining",
+    "Share":"Share",
+    "Copy":"Copy"
 };

@@ -19,5 +19,10 @@ export const TRANSLATIONS_ARAB={
     "create":"خلق",
     "writing":"كتابه",
     "response":"استجابه",
-    "analyzing":"تحليل"
+    "analyzing":"تحليل",
+    "Modify":"يُعدِّل",
+    "Imagine":"يتصور",
+    "Imagining":"تخيل",
+    "Share":"يشارك",
+    "Copy":"ينسخ"
 };

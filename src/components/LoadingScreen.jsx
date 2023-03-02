@@ -5,7 +5,7 @@ const LoadingScreen=({text})=>{
              <div className="flex h-20 w-20 items-center justify-center rounded-full bg-slate-100 animate-[bounce_2s_ease-in-out_infinite]">
                 <IconBrandUnity size={40} stroke={1.5} />
               </div>
-            <span className="mt-4 text-xl font-bold text-gray-500">{text}</span>
+            <span className="mt-4 text-4xl text-gray-500">{text}</span>
         </div>
     );
 }
