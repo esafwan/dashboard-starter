@@ -43,7 +43,7 @@ function Write(){
     if(loading)
         return <LoadingScreen text={`${t("writing")}...`}/>
     else if(responseText)
-        return <ResultScreen text={responseText}/>
+        return <ResultScreen text={responseText} setResponseText={setResponseText}/>
     return (<div className="overflow-hidden">
         <InputQuery setQuery={setQuery} submitQuery={submitQuery}/>
     </div>);
