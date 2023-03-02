@@ -16,7 +16,7 @@ function InputQuery({setQuery,submitQuery}){
             <div className="text-4xl font-bold">{t("Imagine")}</div>
             <div className="flex flex-col p-5 mt-12 border border-black border-dashed rounded-md">
                 <textarea id="queryText"
-                defaultValue="The nation wants to know"
+                defaultValue="A person walking in rain, pastel painting"
                 className="border-0 resize-none h-36"
                 style={{"boxShadow":"none"}}/>
                 <div className="mt-2">
