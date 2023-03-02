@@ -22,5 +22,7 @@ export const TRANSLATIONS_ARAB={
     "analyzing":"تحليل",
     "Modify":"يُعدِّل",
     "Imagine":"يتصور",
-    "Imagining":"تخيل"
+    "Imagining":"تخيل",
+    "Share":"يشارك",
+    "Copy":"ينسخ"
 };

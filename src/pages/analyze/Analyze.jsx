@@ -17,9 +17,9 @@ function Analyze(){
         myHeaders.append("Content-Type", "application/json");
         myHeaders.append("Access-Control-Allow-Origin", "https://ml-text-ai.herokuapp.com");
         const data={
-            data:analyzeText,
-            input_lang:"en",
-            output_lang:"en"
+            "data":analyzeText,
+            "input_lang":"en",
+            "output_lang":"en"
         }
         const options={
             method:"POST",
@@ -27,24 +27,22 @@ function Analyze(){
             body:JSON.stringify(data),
             redirect:"follow"
         }
-        // fetch("https://ml-text-ai.herokuapp.com/analyze",options)
-        // .then((res)=>res.json())
-        // .then((text)=>{
-        //     // setResponseText(text);
-        //     console.log(text);
-        //     setLoading(false);
-        //     console.log(text);
-        // })
-        // .catch((err)=>console.log(err));
-        setTimeout(()=>{
-            setResponseText(`<br>{<br>    &quot;Tone&quot;: &quot;Inspiring&quot;, <br>    &quot;Quality&quot;: &quot;Positive&quot;,<br>    &quot;Grammar&quot;: 9.5<br>}`);
+        fetch("https://ml-text-ai.herokuapp.com/suggest",options)
+        .then((res)=>res.text())
+        .then((text)=>{
+            setResponseText(text);
+            console.log(text);
             setLoading(false);
-        },1000);
+            console.log(text);
+        })
+        .catch((err)=>console.log(err));
+        // setTimeout(()=>{
+        //     setResponseText(`<br>{<br>    &quot;Tone&quot;: &quot;Inspiring&quot;, <br>    &quot;Quality&quot;: &quot;Positive&quot;,<br>    &quot;Grammar&quot;: 9.5<br>}`);
+        //     setLoading(false);
+        // },1000);
     }
     if(loading)
         return <LoadingScreen text={`${t("analyzing")}...`}/>
-    // else if(responseText)
-    //     return (<Modal display="block">{responseText}</Modal>);
     return(
         <>
             {responseText && <Modal display="fixed">{responseText}</Modal>}

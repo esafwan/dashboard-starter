@@ -22,5 +22,7 @@ export const TRANSLATIONS_EN={
     "analyzing":"Analyzing",
     "Modify":"Modify",
     "Imagine":"Imagine",
-    "Imagining":"Imagining"
+    "Imagining":"Imagining",
+    "Share":"Share",
+    "Copy":"Copy"
 };
