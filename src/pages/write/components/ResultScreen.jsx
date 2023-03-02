@@ -35,7 +35,7 @@ function ResultScreen({text,setResponseText}){
                 </button>
             </div>
             <div className="mt-12 flex flex-row justify-end">
-                <CopyButton/>
+                <CopyButton text={text}/>
                 <ShareButton/>
             </div>
             <div className="flex flex-col p-2 mt-4 border border-black border-dashed rounded-md">

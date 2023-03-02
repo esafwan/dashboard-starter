@@ -1,5 +1,5 @@
 import {useTranslation} from "react-i18next";
-const CopyButton=()=>{
+const CopyButton=({text})=>{
     const {t}=useTranslation();
     return(
         <button className="bg-gray-100 p-2 mx-5 flex flex-row rounded-md text-sm hover:bg-gray-200"
