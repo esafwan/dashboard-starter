@@ -28,9 +28,10 @@ function Imagine(){
             body:JSON.stringify(data),
             redirect:"follow"
         }
-        // fetch("https://ml-text-ai.herokuapp.com/magic",options)
-        // .then((res)=>res.text())
+        // fetch("https://ml-text-ai.herokuapp.com/v2/magic",options)
+        // .then((res)=>res.json())
         // .then((text)=>{
+        //     console.log(text);
         //     setLoading(false);
         //     console.log(responseText);
         // })
@@ -45,11 +46,7 @@ function Imagine(){
         return <LoadingScreen text={`${t("Imagining")}...`}/>
     else if(responseImage)
         return <ResultScreen url={responseImage}/>
-    return(
-        <div>
-            <InputQuery setQuery={setQuery} submitQuery={submitQuery}/>
-        </div>
-    );
+    return <InputQuery setQuery={setQuery} submitQuery={submitQuery}/>
 }
 
 export default Imagine;

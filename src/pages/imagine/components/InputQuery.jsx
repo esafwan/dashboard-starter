@@ -12,7 +12,7 @@ function InputQuery({setQuery,submitQuery}){
         }
     }
     return (
-        <div className="h-full">
+        <div className="h-full overflow-hidden">
             <div className="text-4xl font-bold">{t("Imagine")}</div>
             <div className="flex flex-col p-5 mt-12 border border-black border-dashed rounded-md">
                 <textarea id="queryText"

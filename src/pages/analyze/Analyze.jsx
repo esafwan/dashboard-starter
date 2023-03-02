@@ -17,8 +17,7 @@ function Analyze(){
         myHeaders.append("Content-Type", "application/json");
         myHeaders.append("Access-Control-Allow-Origin", "https://ml-text-ai.herokuapp.com");
         const data={
-            data:`Analyze below text. Return json with the following: 1. Tone, 2. Quality, 3.Grammar with a score out of 10 \n
-            ${analyzeText}`,
+            data:analyzeText,
             input_lang:"en",
             output_lang:"en"
         }
@@ -28,10 +27,11 @@ function Analyze(){
             body:JSON.stringify(data),
             redirect:"follow"
         }
-        // fetch("https://ml-text-ai.herokuapp.com/magic",options)
-        // .then((res)=>res.text())
+        // fetch("https://ml-text-ai.herokuapp.com/analyze",options)
+        // .then((res)=>res.json())
         // .then((text)=>{
-        //     setResponseText(text);
+        //     // setResponseText(text);
+        //     console.log(text);
         //     setLoading(false);
         //     console.log(text);
         // })
