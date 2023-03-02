@@ -1,11 +1,25 @@
-import React from "react";
+import React,{useRef,useLayoutEffect} from "react";
 import {useTranslation} from "react-i18next";
 
 function ResultScreen({text,setResponseText}){
+    const MIN_TEXTAREA_HEIGHT=35;
     const {t}=useTranslation();
+    const textareaRef = useRef(null);
+    const onChange=(event)=>setResponseText(event.target.value);
     const handleModify=()=>{
         setResponseText("")
     }
+
+    useLayoutEffect(() => {
+        // Reset height - important to shrink on delete
+        textareaRef.current.style.height = "inherit";
+        // Set height
+        textareaRef.current.style.height = `${Math.max(
+          textareaRef.current.scrollHeight,
+          MIN_TEXTAREA_HEIGHT
+        )}px`;
+    }, [text]);
+
     return (
         <div className="h-full">
             <div className="text-4xl font-bold flex flex-row justify-between">
@@ -37,12 +51,15 @@ function ResultScreen({text,setResponseText}){
                     </svg>
                 </button>
             </div>
-            <div className="flex flex-col p-5 mt-4 border border-black border-dashed rounded-md">
-                <span contentEditable
-                role="textbox"
-                className="outline-none">
-                    {text}
-                </span>
+            <div className="flex flex-col p-2 mt-4 border border-black border-dashed rounded-md">
+                <textarea
+                onChange={onChange}
+                ref={textareaRef}
+                style={{
+                    minHeight:MIN_TEXTAREA_HEIGHT,
+                }}
+                className="resize-none overflow-hidden border-0"
+                value={text}/>
             </div>
         </div>
     );
