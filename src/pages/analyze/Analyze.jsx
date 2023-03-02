@@ -2,7 +2,7 @@ import React,{useState,useContext} from "react";
 import PersistContext from "./../../Context/PersistContext";
 import {useTranslation} from "react-i18next";
 import InputQuery from "./components/InputQuery";
-import Modal from "./components/Modal";
+import Modal from "./../../components/Modal";
 import LoadingScreen from "./../../components/LoadingScreen";
 
 function Analyze(){
@@ -48,7 +48,11 @@ function Analyze(){
         return <LoadingScreen text={`${t("analyzing")}...`}/>
     return(
         <>
-            {analyzeResponse && <Modal display="fixed" setAnalyzeResponse={setAnalyzeResponse}>
+            {analyzeResponse && 
+                <Modal
+                    title={t("Analyze")}
+                    display="fixed" 
+                    clearData={setAnalyzeResponse}>
                     <p>Tone : {analyzeResponse["Tone"]}</p>
                     <p>Quality : {analyzeResponse["Quality"]}</p>
                     <p>Grammar : {analyzeResponse["Grammar"]}</p>

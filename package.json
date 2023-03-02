@@ -30,7 +30,8 @@
     "react-firebase-hooks": "^5.1.1",
     "react-i18next": "^12.2.0",
     "react-router-dom": "^6.7.0",
-    "sort-by": "^1.2.0"
+    "react-share": "^4.4.1",
+    "sort-by": "^0.0.2"
   },
   "devDependencies": {
     "@types/react": "^18.0.26",
