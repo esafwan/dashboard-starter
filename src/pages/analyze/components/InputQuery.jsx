@@ -25,7 +25,7 @@ function InputQuery({setAnalyzeText,submitAnalyze}){
                     focus:ring-brand-500 focus:ring-offset-2"
                     onClick={handleAnalyze}
                     >
-                        {t("create")}</button>
+                        {t("analyze")}</button>
                 </div>
             </div>
         </div>
