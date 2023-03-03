@@ -1,13 +1,14 @@
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
+console.log(import.meta.env.VITE_apiKey);
 const firebaseConfig = {
-  apiKey: "AIzaSyA54AYIqvuMY0rYnbVIPi_5V5nGHNpu0uU",
-  authDomain: "text-ai-dev-f90ef.firebaseapp.com",
-  projectId: "text-ai-dev-f90ef",
-  storageBucket: "text-ai-dev-f90ef.appspot.com",
-  messagingSenderId: "802835550907",
-  appId: "1:802835550907:web:bbd61c56df3b8276f60f9e",
-  measurementId: "G-XCCFHH0HFZ"
+  apiKey: import.meta.env.VITE_apiKey,
+  authDomain: import.meta.env.VITE_authDomain,
+  projectId: import.meta.env.VITE_projectId,
+  storageBucket: import.meta.env.VITE_storageBucket,
+  messagingSenderId: import.meta.env.VITE_messagingSenderId,
+  appId: import.meta.env.VITE_appId,
+  measurementId:import.meta.env.VITE_mesaurementId
 };
 
 // Initialize Firebase
