@@ -4,31 +4,6 @@ import PersistContext from "./../../Context/PersistContext";
 import InputQuery from "./components/InputQuery";
 import ResultScreen from "./components/ResultScreen";
 import LoadingScreen from "./../../components/LoadingScreen";
-
-// import firebase from "firebase/app";
-// import "firebase/analytics";
-
-// const firebaseConfig = {
-
-//     apiKey: "AIzaSyA54AYIqvuMY0rYnbVIPi_5V5nGHNpu0uU",
-  
-//     authDomain: "text-ai-dev-f90ef.firebaseapp.com",
-  
-//     projectId: "text-ai-dev-f90ef",
-  
-//     storageBucket: "text-ai-dev-f90ef.appspot.com",
-  
-//     messagingSenderId: "802835550907",
-  
-//     appId: "1:802835550907:web:bbd61c56df3b8276f60f9e",
-  
-//     measurementId: "G-XCCFHH0HFZ"
-  
-//   };
-
-// firebase.initializeApp(firebaseConfig);
-// const analytics=firebase.analytics();
-
 import {analytics} from "./../../firebase";
 import { logEvent } from "firebase/analytics";
 function Write(){
@@ -63,6 +38,7 @@ function Write(){
         })
         .catch((err)=>console.log(err));
         // setTimeout(()=>{
+        //     logEvent(analytics,"write",{query});
         //     setWriteResponseText(`Congratulations on your outstanding performance this past quarter! Your hard work and dedication have been exemplary and have had a positive impact on the entire team.`);
         //     setLoading(false);
         // },5000);
