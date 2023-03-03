@@ -1,4 +1,4 @@
-import React,{useRef,useLayoutEffect} from "react";
+import React,{useRef,useLayoutEffect, useEffect} from "react";
 import {useTranslation} from "react-i18next";
 import CopyButton from "./../../../components/buttons/CopyButton";
 import ShareButton from "./../../../components/buttons/ShareButton";
@@ -12,15 +12,10 @@ function ResultScreen({text,setResponseText}){
         setResponseText("")
     }
 
-    useLayoutEffect(() => {
-        // Reset height - important to shrink on delete
-        textareaRef.current.style.height = "inherit";
-        // Set height
-        textareaRef.current.style.height = `${Math.max(
-          textareaRef.current.scrollHeight,
-          MIN_TEXTAREA_HEIGHT
-        )}px`;
-    }, [text]);
+    useEffect(()=>{
+        textareaRef.current.style.height="inherit";
+        textareaRef.current.style.height=`${Math.max(textareaRef.current.scrollHeight,MIN_TEXTAREA_HEIGHT)}px`;
+    },[text]);
 
     return (
         <div className="h-full">
