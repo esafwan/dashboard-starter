@@ -34,7 +34,7 @@ function Header({setDirection}) {
         <div className="flex">
             <select className="md:mx-10" id="language" onChange={()=>setDirection(document.querySelector("#language").value)}>
               <option value="en">english</option>
-              <option value="arab">عربي</option>
+              <option value="ar">عربي</option>
             </select>
             <span className="hidden md:flex">
               <AccountNav />

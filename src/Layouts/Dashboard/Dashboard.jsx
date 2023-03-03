@@ -10,11 +10,11 @@ function Dashboard({children}) {
   const [language,setLanguage]=useState(localStorage.getItem("language"));
   useEffect(()=>{
     localStorage.setItem("language",language);
-    i18n.changeLanguage(language)
+    i18n.changeLanguage(language);
   },[language])
-  document.dir=language==="arab"?"rtl":"ltr";
+  document.dir=language==="ar"?"rtl":"ltr";
   return (
-    <div className="mx-auto flex flex-col space-y-6">      
+    <div className="mx-auto flex flex-col space-y-6" lang={language}>      
       <Header setDirection={setLanguage}/>
       <div id="content" className="grid gap-12 md:grid-cols-[210px_2fr]">                
         <Sidebar />        

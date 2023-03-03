@@ -8,7 +8,7 @@ const resources={
     en:{
         translation:TRANSLATIONS_EN
     },
-    arab:{
+    ar:{
         translation:TRANSLATIONS_ARAB
     }
 }
