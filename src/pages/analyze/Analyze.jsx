@@ -4,7 +4,8 @@ import {useTranslation} from "react-i18next";
 import InputQuery from "./components/InputQuery";
 import Modal from "./../../components/Modal";
 import LoadingScreen from "./../../components/LoadingScreen";
-
+import {analytics} from "./../../firebase";
+import { logEvent } from "firebase/analytics";
 function Analyze(){
     const {t}=useTranslation();
     const {analyzeText,setAnalyzeText,analyzeResponse,setAnalyzeResponse}=useContext(PersistContext);
@@ -29,11 +30,13 @@ function Analyze(){
         fetch("https://ml-text-ai.herokuapp.com/analyze",options)
         .then((res)=>res.json())
         .then((data)=>{
+            logEvent(analytics,"analyze",{query:analyzeText});
             setAnalyzeResponse(data);
             setLoading(false);
         })
         .catch((err)=>console.log(err));
         // setTimeout(()=>{
+        //     logEvent(analytics,"analyze",{query:analyzeText});
         //     setAnalyzeResponse({
         //         "Tone": "Positive",
         //         "Quality": "Informative",

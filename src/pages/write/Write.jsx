@@ -4,7 +4,8 @@ import PersistContext from "./../../Context/PersistContext";
 import InputQuery from "./components/InputQuery";
 import ResultScreen from "./components/ResultScreen";
 import LoadingScreen from "./../../components/LoadingScreen";
-
+import {analytics} from "./../../firebase";
+import { logEvent } from "firebase/analytics";
 function Write(){
     const {t}=useTranslation();
     const {writeResponseText,setWriteResponseText}=useContext(PersistContext);
@@ -31,11 +32,13 @@ function Write(){
         fetch("https://ml-text-ai.herokuapp.com/magic",options)
         .then((res)=>res.json())
         .then((data)=>{
+            logEvent(analytics,"write",{query:"test"});
             setWriteResponseText(data.txt);
             setLoading(false);
         })
         .catch((err)=>console.log(err));
         // setTimeout(()=>{
+        //     logEvent(analytics,"write",{query});
         //     setWriteResponseText(`Congratulations on your outstanding performance this past quarter! Your hard work and dedication have been exemplary and have had a positive impact on the entire team.`);
         //     setLoading(false);
         // },5000);
