@@ -3,7 +3,8 @@ import {useTranslation} from "react-i18next";
 import CopyButton from "./../../../components/buttons/CopyButton";
 import ShareButton from "./../../../components/buttons/ShareButton";
 
-function ResultScreen({text,setResponseText}){
+function ResultScreen({text,setResponseText,outputLang}){
+    console.log(outputLang);
     const MIN_TEXTAREA_HEIGHT=35;
     const {t}=useTranslation();
     const textareaRef = useRef(null);
@@ -18,11 +19,11 @@ function ResultScreen({text,setResponseText}){
     },[text]);
 
     return (
-        <div className="h-full">
-            <div className="text-4xl font-bold flex flex-row justify-between">
+        <div className="h-full w-full overflow-hidden">
+            <div className="text-4xl font-bold flex flex-row justify-between ">
                 <span>{t("response")}</span>
                 <button className="h-9 items-center rounded-md border
-                    border-transparent bg-slate-900 px-4 py-2 text-sm font-medium 
+                    border-transparent bg-slate-900 px-3 py-2 text-sm font-medium 
                     text-white hover:bg-slate-700 focus:outline-none focus:ring-2 
                     focus:ring-brand-500 focus:ring-offset-2"
                     onClick={handleModify}>
@@ -33,7 +34,7 @@ function ResultScreen({text,setResponseText}){
                 <CopyButton text={text}/>
                 <ShareButton/>
             </div>
-            <div className="flex flex-col p-2 mt-4 border border-black border-dashed rounded-md">
+            <div className="flex flex-col mt-4 border border-black border-dashed rounded-md" dir={outputLang==="ar"?"rtl":"ltr"}>
                 <textarea
                 onChange={onChange}
                 ref={textareaRef}
@@ -41,7 +42,7 @@ function ResultScreen({text,setResponseText}){
                     minHeight:MIN_TEXTAREA_HEIGHT,
                     boxShadow:"none"
                 }}
-                className="resize-none overflow-hidden border-0 outline-none"
+                className="resize-none border-0 outline-none"
                 value={text}/>
             </div>
         </div>

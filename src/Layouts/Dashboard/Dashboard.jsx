@@ -3,6 +3,7 @@ import i18n from "i18next";
 import Header from "./../../components/Header";
 import Sidebar from "./Sidebar/Sidebar";
 import Content from "./../../components/Content";
+import Footer from "./../../components/Footer";
 
 function Dashboard({children}) {
   if(!localStorage.getItem("language"))
@@ -20,7 +21,7 @@ function Dashboard({children}) {
         <Sidebar />        
         {children?children:<Content/>}
       </div>
-      
+      <Footer/>
     </div>
   );
 }

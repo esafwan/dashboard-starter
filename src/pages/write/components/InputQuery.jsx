@@ -1,15 +1,15 @@
 import React from "react";
 import {useTranslation} from "react-i18next";
 
-function InputQuery({setQuery,submitQuery}){
+function InputQuery({setQuery,submitQuery,setOutputLang}){
     const {t}=useTranslation();
     const handleCreate=()=>{
         const queryText=document.getElementById("queryText").value;
-        const outputLang=document.getElementById("outputLang").value;
-        // queryText && setQuery(queryText) && submitQuery();
+        setOutputLang(document.getElementById("outputLang").value);
+        
         if(queryText){
             setQuery(queryText);
-            submitQuery(outputLang);
+            submitQuery();
         }
     }
     return (
@@ -22,7 +22,7 @@ function InputQuery({setQuery,submitQuery}){
                 style={{"boxShadow":"none"}}/>
                 <div className="mt-2 flex justify-end items-center">
                     <label>
-                        <span className="text-xs mx-2">{t("Output Language")} : </span>
+                        <span className="text-xs sm:mx-2">{t("Output Language")} : </span>
                         <select className="text-xs" id="outputLang">
                             <option value="en">English</option>
                             <option value="ar">Arabic</option>

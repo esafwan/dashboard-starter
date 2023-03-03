@@ -1,4 +1,4 @@
-import React,{useState,useContext} from "react";
+import React,{useState,useContext,useRef} from "react";
 import {useTranslation} from "react-i18next";
 import PersistContext from "./../../Context/PersistContext";
 import InputQuery from "./components/InputQuery";
@@ -12,7 +12,10 @@ function Write(){
     const [loading,setLoading]=useState(false);
     let query=undefined;
     const setQuery=(text)=>query=text;
-    const submitQuery=(outputLang)=>{
+    const outputLang=useRef("en");
+    const setOutputLang=(lang)=>outputLang.current=lang;
+    
+    const submitQuery=()=>{
         setLoading(true);
         const myHeaders = new Headers();
         myHeaders.append("Authorization", "Basic dGVzdDE6dGVzdDFfcGFzcw==");
@@ -64,9 +67,9 @@ function Write(){
     if(loading)
         return <LoadingScreen text={`${t("writing")}...`}/>
     else if(writeResponseText)
-        return <ResultScreen text={writeResponseText} setResponseText={setWriteResponseText}/>
+        return <ResultScreen text={writeResponseText} setResponseText={setWriteResponseText} outputLang={outputLang.current}/>
     return (<div className="overflow-hidden">
-        <InputQuery setQuery={setQuery} submitQuery={submitQuery}/>
+        <InputQuery setQuery={setQuery} submitQuery={submitQuery} setOutputLang={setOutputLang}/>
     </div>);
 }
 
