@@ -28,7 +28,6 @@
     "react-burger-menu": "^3.0.9",
     "react-dom": "^18.2.0",
     "react-firebase-auth": "^1.0.3",
-    "react-firebase-hooks": "^5.1.1",
     "react-i18next": "^12.2.0",
     "react-router-dom": "^6.7.0",
     "react-share": "^4.4.1",

@@ -5,6 +5,32 @@ import InputQuery from "./components/InputQuery";
 import ResultScreen from "./components/ResultScreen";
 import LoadingScreen from "./../../components/LoadingScreen";
 
+// import firebase from "firebase/app";
+// import "firebase/analytics";
+
+// const firebaseConfig = {
+
+//     apiKey: "AIzaSyA54AYIqvuMY0rYnbVIPi_5V5nGHNpu0uU",
+  
+//     authDomain: "text-ai-dev-f90ef.firebaseapp.com",
+  
+//     projectId: "text-ai-dev-f90ef",
+  
+//     storageBucket: "text-ai-dev-f90ef.appspot.com",
+  
+//     messagingSenderId: "802835550907",
+  
+//     appId: "1:802835550907:web:bbd61c56df3b8276f60f9e",
+  
+//     measurementId: "G-XCCFHH0HFZ"
+  
+//   };
+
+// firebase.initializeApp(firebaseConfig);
+// const analytics=firebase.analytics();
+
+import {analytics} from "./../../firebase";
+import { logEvent } from "firebase/analytics";
 function Write(){
     const {t}=useTranslation();
     const {writeResponseText,setWriteResponseText}=useContext(PersistContext);
@@ -31,6 +57,7 @@ function Write(){
         fetch("https://ml-text-ai.herokuapp.com/magic",options)
         .then((res)=>res.json())
         .then((data)=>{
+            logEvent(analytics,"write",{query:"test"});
             setWriteResponseText(data.txt);
             setLoading(false);
         })
