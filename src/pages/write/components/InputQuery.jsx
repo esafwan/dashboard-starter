@@ -5,7 +5,7 @@ function InputQuery({setQuery,submitQuery,setOutputLang}){
     const {t}=useTranslation();
     const handleCreate=()=>{
         const queryText=document.getElementById("queryText").value;
-        setOutputLang(document.getElementById("outputLang").value);
+        // setOutputLang(document.getElementById("outputLang").value);
         
         if(queryText){
             setQuery(queryText);
