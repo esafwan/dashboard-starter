@@ -1,4 +1,4 @@
-import React,{useState,useContext} from "react";
+import React,{useState,useContext, useEffect} from "react";
 import PersistContext from "./../../Context/PersistContext";
 import {useTranslation} from "react-i18next";
 import InputQuery from "./components/InputQuery";

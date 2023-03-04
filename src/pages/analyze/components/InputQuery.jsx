@@ -18,7 +18,7 @@ function InputQuery({analyzeText,setAnalyzeText,submitAnalyze}){
                 defaultValue={analyzeText}
                 className="border-0 resize-none h-36"
                 style={{"boxShadow":"none"}}/>
-                <div className="mt-2">
+                <div className="mt-2 flex justify-end">
                     <button className="h-9 items-center rounded-md border float-right
                     border-transparent bg-slate-900 px-4 py-2 text-sm font-medium 
                     text-white hover:bg-slate-700 focus:outline-none focus:ring-2 
