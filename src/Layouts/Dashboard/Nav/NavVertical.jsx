@@ -18,7 +18,7 @@ function NavVertical() {
   return (
     <nav className="grid items-start gap-2">
       <div>
-        <NavLink to="/dashboard" data-bcup-haslogintext="no" className={({isActive})=>isActive?active:inactive}>
+        <NavLink to="/" data-bcup-haslogintext="no" className={({isActive})=>isActive?active:inactive}>
             <IconHome2 className="mr-2" />
             <span className="mx-3 text-2xl md:text-sm">{t("dashboard")}</span>
         </NavLink>

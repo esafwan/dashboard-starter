@@ -13,9 +13,9 @@ function App() {
       <Route path="/" element={
         <Dashboard></Dashboard>
       }/>
-      <Route path="/dashboard" element={
+      {/* <Route path="/dashboard" element={
         <Dashboard></Dashboard>
-      }/>
+      }/> */}
       <Route path="/write" element={
         <Dashboard><Write/></Dashboard>
       }/>
