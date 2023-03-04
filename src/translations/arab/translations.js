@@ -3,7 +3,7 @@ export const TRANSLATIONS_ARAB={
     "subtitle":"خيال لا حدود له ، في أي وقت من الأوقات.",
     "content_none":"لا خيال",
     "content_none_description":"ليس لديك أي خيال. ابدأ بالتخيل",
-    "dashboard":"لوحة القيادة",
+    "dashboard":"داشبورد",
     "analyze":"حلل",
     "write":"يكتب",
     "explain":"يشرح",

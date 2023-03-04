@@ -4,6 +4,7 @@ import Dashboard from "./Layouts/Dashboard/Dashboard";
 import Write from "./pages/write/Write";
 import Analyze from "./pages/analyze/Analyze";
 import Imagine from "./pages/imagine/Imagine";
+import Explain from "./pages/explain/Explain";
 import "./App.css";
 
 function App() {
@@ -12,9 +13,9 @@ function App() {
       <Route path="/" element={
         <Dashboard></Dashboard>
       }/>
-      <Route path="/dashboard" element={
+      {/* <Route path="/dashboard" element={
         <Dashboard></Dashboard>
-      }/>
+      }/> */}
       <Route path="/write" element={
         <Dashboard><Write/></Dashboard>
       }/>
@@ -22,7 +23,7 @@ function App() {
         <Dashboard><Analyze/></Dashboard>
       }/>
       <Route path="/explain" element={
-        <Dashboard>Explain</Dashboard>
+        <Dashboard><Explain/></Dashboard>
       }/>
       <Route path="/imagine" element={
           <Dashboard><Imagine/></Dashboard>
