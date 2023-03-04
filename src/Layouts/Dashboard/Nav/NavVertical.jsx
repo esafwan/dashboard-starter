@@ -43,14 +43,14 @@ function NavVertical() {
         </svg>
             <span className="mx-3 text-2xl md:text-sm">{t("Imagine")}</span>
         </NavLink>       
-        <NavLink to="/history" data-bcup-haslogintext="no" className={({isActive})=>isActive?active:inactive}>
+        {/* <NavLink to="/history" data-bcup-haslogintext="no" className={({isActive})=>isActive?active:inactive}>
             <IconHistory className="mr-2" />
             <span className="mx-3 text-2xl md:text-sm">{t("history")}</span>
         </NavLink>
         <NavLink to="/settings" data-bcup-haslogintext="no" className={({isActive})=>isActive?active:inactive}>
             <IconSettings2 className="mr-2" />
             <span className="mx-3 text-2xl md:text-sm">{t("settings")}</span>
-        </NavLink>
+        </NavLink> */}
       </div>
     </nav>
   );

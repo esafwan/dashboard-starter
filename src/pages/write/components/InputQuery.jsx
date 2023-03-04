@@ -21,13 +21,13 @@ function InputQuery({setQuery,submitQuery,setOutputLang}){
                 className="border-0 resize-none h-36"
                 style={{"boxShadow":"none"}}/>
                 <div className="mt-2 flex justify-end items-center">
-                    <label>
+                    {/* <label>
                         <span className="text-xs sm:mx-2">{t("Output Language")} : </span>
                         <select className="text-xs" id="outputLang">
                             <option value="en">English</option>
                             <option value="ar">Arabic</option>
                         </select>
-                    </label>
+                    </label> */}
                     <button className="h-9 items-center rounded-md border
                     border-transparent bg-slate-900 mx-4 px-4 py-2 text-sm font-medium 
                     text-white hover:bg-slate-700 focus:outline-none focus:ring-2 

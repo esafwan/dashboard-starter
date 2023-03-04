@@ -22,25 +22,25 @@ function Header({setDirection}) {
           </a>
           <Menu/>
           <nav className="hidden gap-6 md:flex">
-            <Link
+            {/* <Link
               className="flex items-center text-lg font-semibold text-slate-600 sm:text-sm"
               to="#"
               data-bcup-haslogintext="no"
             >
               {t("account")}
-            </Link>
+            </Link> */}
           </nav>
         </div>
         <div className="flex">
-            <select className="md:mx-10" id="language"
+            <select className="md:mr-3" id="language"
             defaultValue={localStorage.getItem("language")}
             onChange={()=>setDirection(document.querySelector("#language").value)}>
               <option value="en">english</option>
               <option value="ar">عربي</option>
             </select>
-            <span className="hidden md:flex">
+            {/* <span className="hidden md:flex">
               <AccountNav />
-            </span>
+            </span> */}
         </div>
       </div>
     </header>
