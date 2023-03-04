@@ -24,7 +24,7 @@ function Write(){
         const data={
             data:query,
             input_lang:"en",
-            output_lang:outputLang
+            output_lang:outputLang.current
         }
         const options={
             method:"POST",
