@@ -1,12 +1,14 @@
-import React from "react";
+import React,{useState,useEffect,useContext} from "react";
+import PersistContext from "./../../../Context/PersistContext";
 import {useTranslation} from "react-i18next";
 
 function InputQuery({setQuery,submitQuery,setOutputLang}){
     const {t}=useTranslation();
+    // const {writePlaceholder}=useContext(PersistContext);
+    // const [placeholder,setPlaceholder]=useState(t("Write Placeholder"));
     const handleCreate=()=>{
         const queryText=document.getElementById("queryText").value;
         // setOutputLang(document.getElementById("outputLang").value);
-        
         if(queryText){
             setQuery(queryText);
             submitQuery();

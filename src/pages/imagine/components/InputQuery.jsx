@@ -7,8 +7,7 @@ function InputQuery({imagineQuery,setQuery,submitQuery}){
         const queryText=document.getElementById("queryText").value;
         // queryText && setQuery(queryText) && submitQuery();
         if(queryText){
-            setQuery(queryText);
-            submitQuery();
+            submitQuery(queryText);
         }
     }
     return (
@@ -16,7 +15,7 @@ function InputQuery({imagineQuery,setQuery,submitQuery}){
             <div className="text-4xl font-bold">{t("Imagine")}</div>
             <div className="flex flex-col p-5 mt-12 border border-black border-dashed rounded-md">
                 <textarea id="queryText"
-                defaultValue={imagineQuery}
+                defaultValue={t("Imagine Placeholder")}
                 className="border-0 resize-none h-36"
                 style={{"boxShadow":"none"}}/>
                 <div className="mt-2">

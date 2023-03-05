@@ -9,12 +9,12 @@ import { logEvent } from "firebase/analytics";
 
 function Imagine(){
     const {t}=useTranslation();
-    const {imagineQuery,setImagineQuery,imagineResponseUrl,setImagineResponseUrl}=useContext(PersistContext);
+    const {imagineResponseUrl,setImagineResponseUrl}=useContext(PersistContext);
     const [loading,setLoading]=useState(false);
     // const [responseImage,setResponseImage]=useState(false);
     // let query=undefined;
     // const setQuery=(text)=>query=text;
-    const submitQuery=()=>{
+    const submitQuery=(imagineQuery)=>{
         setLoading(true);
         const myHeaders = new Headers();
         myHeaders.append("Authorization", "Basic dGVzdDE6dGVzdDFfcGFzcw==");
@@ -51,7 +51,7 @@ function Imagine(){
         return <LoadingScreen text={`${t("Imagining")}...`}/>
     else if(imagineResponseUrl)
         return <ResultScreen url={imagineResponseUrl} setImagineResponseUrl={setImagineResponseUrl}/>
-    return <InputQuery imagineQuery={imagineQuery} setQuery={setImagineQuery} submitQuery={submitQuery}/>
+    return <InputQuery submitQuery={submitQuery}/>
 }
 
 export default Imagine;
