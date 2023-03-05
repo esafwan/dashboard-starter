@@ -5,7 +5,7 @@ import {useTranslation} from "react-i18next";
 function Content() {
   const {t}=useTranslation();
   return (
-    <main className="flex w-full flex-1 flex-col overflow-hidden">
+    <main className="flex w-full pt-4 flex-1 flex-col overflow-hidden">
       <div className="grid items-start gap-8">
         {/* title + button */}
         <Title title={t("title")} subtitle={t("subtitle")} />        

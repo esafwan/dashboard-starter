@@ -16,7 +16,7 @@ function Dashboard({children}) {
   document.dir=language==="ar"?"rtl":"ltr";
   return (
     <div className="mx-auto flex flex-col space-y-6" lang={language}>      
-      <Header setDirection={setLanguage}/>
+      {/* <Header setDirection={setLanguage}/> */}
       <div id="content" className="grid gap-12 md:grid-cols-[210px_2fr]">                
         <Sidebar />        
         {children?children:<Content/>}
