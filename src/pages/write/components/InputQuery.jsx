@@ -1,5 +1,4 @@
-import React,{useState,useEffect,useContext} from "react";
-import PersistContext from "./../../../Context/PersistContext";
+import React from "react";
 import {useTranslation} from "react-i18next";
 
 function InputQuery({setQuery,submitQuery,setOutputLang}){
@@ -19,7 +18,7 @@ function InputQuery({setQuery,submitQuery,setOutputLang}){
             <div className="text-4xl font-bold">{t("write")}</div>
             <div className="flex flex-col p-5 mt-12 border border-black border-dashed rounded-md">
                 <textarea id="queryText"
-                defaultValue={t("Write Placeholder")}
+                value={t("Write Placeholder")}
                 className="border-0 resize-none h-36"
                 style={{"boxShadow":"none"}}/>
                 <div className="mt-2 flex justify-end items-center">

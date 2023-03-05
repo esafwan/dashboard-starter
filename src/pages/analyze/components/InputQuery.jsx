@@ -14,7 +14,7 @@ function InputQuery({submitAnalyze}){
             <div className="text-4xl font-bold">{t("analyze")}</div>
             <div className="flex flex-col p-5 mt-12 border border-black border-dashed rounded-md">
                 <textarea id="analyzeText"
-                defaultValue={t("Analyze Placeholder")}
+                value={t("Analyze Placeholder")}
                 className="border-0 resize-none h-36"
                 style={{"boxShadow":"none"}}/>
                 <div className="mt-2 flex justify-end">
