@@ -8,9 +8,9 @@ import {analytics} from "./../../firebase";
 import { logEvent } from "firebase/analytics";
 function Analyze(){
     const {t}=useTranslation();
-    const {analyzeText,setAnalyzeText,analyzeResponse,setAnalyzeResponse}=useContext(PersistContext);
+    const {analyzeResponse,setAnalyzeResponse}=useContext(PersistContext);
     const [loading,setLoading]=useState(false);
-    const submitAnalyze=()=>{
+    const submitAnalyze=(analyzeText)=>{
         setLoading(true);
         const myHeaders = new Headers();
         myHeaders.append("Authorization", "Basic dGVzdDE6dGVzdDFfcGFzcw==");
@@ -59,10 +59,7 @@ function Analyze(){
                     <p>Grammar : {analyzeResponse["Grammar"]}</p>
                 </Modal>}
             {/* {responseText && window.alert(responseText)} */}
-            <InputQuery 
-                analyzeText={analyzeText}
-                submitAnalyze={submitAnalyze} 
-                setAnalyzeText={setAnalyzeText}/>
+            <InputQuery submitAnalyze={submitAnalyze} />
         </>
         
     );

@@ -1,4 +1,5 @@
-import {useEffect, useState} from "react";
+import {useEffect, useContext} from "react";
+import PersistContext from "./../../Context/PersistContext";
 import i18n from "i18next";
 import Header from "./../../components/Header";
 import Sidebar from "./Sidebar/Sidebar";
@@ -6,9 +7,7 @@ import Content from "./../../components/Content";
 import Footer from "./../../components/Footer";
 
 function Dashboard({children}) {
-  if(!localStorage.getItem("language"))
-    localStorage.setItem("language","en");
-  const [language,setLanguage]=useState(localStorage.getItem("language"));
+  const {language,setLanguage}=useContext(PersistContext);
   useEffect(()=>{
     localStorage.setItem("language",language);
     i18n.changeLanguage(language);
