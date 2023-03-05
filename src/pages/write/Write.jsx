@@ -12,15 +12,13 @@ function Write(){
     const {t}=useTranslation();
     const {writeResponseText,setWriteResponseText}=useContext(PersistContext);
     const [loading,setLoading]=useState(false);
-    let query=undefined;
-    const setQuery=(text)=>query=text;
     const outputLang=useRef("en");
-    const setOutputLang=(lang)=>outputLang.current=lang;
+    // const setOutputLang=(lang)=>outputLang.current=lang;
     
-    function resetHandler(){
+    const resetHandler=()=>{
         setWriteResponseText("");
     }
-    const submitQuery=()=>{
+    const submitQuery=(query)=>{
         setLoading(true);
         const myHeaders = new Headers();
         myHeaders.append("Authorization", "Basic dGVzdDE6dGVzdDFfcGFzcw==");
@@ -75,9 +73,6 @@ function Write(){
                 <div className="text-2xl font-bold tracking-wide text-slate-900">{t("write")}</div>
                 {(!loading && writeResponseText) && <MainButton text={t("Modify")} onClickHandler={resetHandler}/>}
             </div>
-            {/* <div className={`mt-12 ${writeResponseText && "mb-4"} self-end`}>
-                {(!loading && writeResponseText) && <CopyButton/>}
-            </div> */}
              <div className={"flex flex-col border border-black border-dashed rounded-md border-slate-200 mt-12"}>
                 {loading && <LoadingScreen text={`${t("writing")}...`}/>}
                 {(!loading && writeResponseText) && 
@@ -90,8 +85,7 @@ function Write(){
                     setResponseText={setWriteResponseText}/>
                 </>}
                 {(!loading && !writeResponseText) && <InputQuery 
-                    submitQuery={submitQuery} 
-                    setQuery={setQuery}/>}
+                    submitQuery={submitQuery} />}
              </div>
         </div>
     );
