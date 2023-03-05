@@ -2,7 +2,7 @@ import {useTranslation} from "react-i18next";
 const CopyButton=({text})=>{
     const {t}=useTranslation();
     return(
-        <button className="bg-gray-100 p-2 mx-5 flex flex-row rounded-md text-sm hover:bg-gray-200"
+        <button className="bg-gray-100 p-2 flex flex-row rounded-md text-sm hover:bg-gray-200"
                 onClick={()=>navigator.clipboard.writeText(text)}>
                     {t("Copy")}
                     <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-clipboard-check" width="21" height="21" viewBox="0 0 24 24" strokeWidth="1.25" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">

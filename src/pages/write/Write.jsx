@@ -4,6 +4,8 @@ import PersistContext from "./../../Context/PersistContext";
 import InputQuery from "./components/InputQuery";
 import ResultScreen from "./components/ResultScreen";
 import LoadingScreen from "./../../components/LoadingScreen";
+import MainButton from "./../../components/buttons/MainButton";
+import CopyButton from "./../../components/buttons/CopyButton";
 import {analytics} from "./../../firebase";
 import { logEvent } from "firebase/analytics";
 function Write(){
@@ -15,6 +17,9 @@ function Write(){
     const outputLang=useRef("en");
     const setOutputLang=(lang)=>outputLang.current=lang;
     
+    function resetHandler(){
+        setWriteResponseText("");
+    }
     const submitQuery=()=>{
         setLoading(true);
         const myHeaders = new Headers();
@@ -64,13 +69,32 @@ function Write(){
         //     setLoading(false);
         // },5000);
     }
-    if(loading)
-        return <LoadingScreen text={`${t("writing")}...`}/>
-    else if(writeResponseText)
-        return <ResultScreen text={writeResponseText} setResponseText={setWriteResponseText} outputLang={outputLang.current}/>
-    return (<div className="overflow-hidden">
-        <InputQuery setQuery={setQuery} submitQuery={submitQuery} setOutputLang={setOutputLang}/>
-    </div>);
+    return (
+        <div className="flex flex-col overflow-hidden h-full">
+            <div className="flex justify-between">
+                <div className="text-2xl font-bold tracking-wide text-slate-900">{t("write")}</div>
+                {(!loading && writeResponseText) && <MainButton text={t("Modify")} onClickHandler={resetHandler}/>}
+            </div>
+            {/* <div className={`mt-12 ${writeResponseText && "mb-4"} self-end`}>
+                {(!loading && writeResponseText) && <CopyButton/>}
+            </div> */}
+             <div className={"flex flex-col border border-black border-dashed rounded-md border-slate-200 mt-12"}>
+                {loading && <LoadingScreen text={`${t("writing")}...`}/>}
+                {(!loading && writeResponseText) && 
+                <>
+                    <div className="p-2 self-end">
+                        <CopyButton text={writeResponseText}/>
+                    </div>
+                    <ResultScreen
+                    text={writeResponseText}
+                    setResponseText={setWriteResponseText}/>
+                </>}
+                {(!loading && !writeResponseText) && <InputQuery 
+                    submitQuery={submitQuery} 
+                    setQuery={setQuery}/>}
+             </div>
+        </div>
+    );
 }
 
 export default Write;

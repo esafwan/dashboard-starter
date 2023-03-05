@@ -19,7 +19,8 @@ function Dashboard({children}) {
       {/* <Header setDirection={setLanguage}/> */}
       <div id="content" className="grid gap-12 md:grid-cols-[210px_2fr]">                
         <Sidebar />        
-        {children?children:<Content/>}
+        {children?
+          (<div className="pt-4 pr-10">{children}</div>):<Content/>}
       </div>
       <Footer/>
     </div>
