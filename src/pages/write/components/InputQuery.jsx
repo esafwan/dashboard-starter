@@ -17,7 +17,7 @@ function InputQuery({submitQuery}){
     return (
         <div className="flex flex-col">
             <textarea id="queryText"
-            value={t("Write Placeholder")}
+            value={queryText}
             className="border-0 resize-none h-36 p-5"
             style={{"boxShadow":"none"}}
             onChange={(e)=>setQueryText(e.target.value)}/>
