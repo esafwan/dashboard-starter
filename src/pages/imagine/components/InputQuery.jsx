@@ -1,11 +1,18 @@
-import React,{useState} from "react";
+import React,{useState,useContext,useEffect} from "react";
+import PersistContext from "./../../../Context/PersistContext";
 import {useTranslation} from "react-i18next";
 import ButtonHolder from "./../../../components/ButtonHolder";
 import MainButton from "./../../../components/buttons/MainButton";
 
 function InputQuery({submitQuery}){
+    const {language}=useContext(PersistContext);
     const {t}=useTranslation();
     const [queryText,setQueryText]=useState(t("Imagine Placeholder"));
+    useEffect(()=>{
+        setTimeout(()=>{
+            setQueryText(t("Imagine Placeholder"))
+        });
+    },[language]);
     const handleImagine=()=>{
         if(queryText){
             submitQuery(queryText);

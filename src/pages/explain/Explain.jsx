@@ -7,7 +7,7 @@ function Explain(){
     return (
         <div className="flex flex-col overflow-hidden h-full">
             <div className="flex justify-between">
-                <div className="text-2xl font-bold tracking-wide text-slate-900">{t("Explain")}</div>
+                <div className="text-2xl font-bold tracking-wide text-slate-900">{t("explain")}</div>
                 {/* {(!loading && writeResponseText) && <MainButton text={t("Modify")} onClickHandler={resetHandler}/>} */}
             </div>
              <div className={"flex flex-col border border-black border-dashed rounded-md border-slate-200 mt-12"}>

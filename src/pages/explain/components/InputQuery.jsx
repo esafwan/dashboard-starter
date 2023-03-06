@@ -14,7 +14,7 @@ function InputQuery(){
         // onChange={(e)=>setQueryText(e.target.value)}
         />
         <ButtonHolder>
-            <MainButton text={t("Explain")} 
+            <MainButton text={t("explain")} 
             // onClickHandler={handleCreate}
             />
         </ButtonHolder>

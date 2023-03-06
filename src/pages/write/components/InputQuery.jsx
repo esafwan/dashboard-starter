@@ -1,15 +1,19 @@
-import React,{useState} from "react";
+import React,{useState,useEffect,useContext} from "react";
+import PersistContext from "./../../../Context/PersistContext";
 import {useTranslation} from "react-i18next";
 import ButtonHolder from "./../../../components/ButtonHolder";
 import MainButton from "./../../../components/buttons/MainButton";
 
 function InputQuery({submitQuery}){
     const {t}=useTranslation();
-    // const {writePlaceholder}=useContext(PersistContext);
-    // const [placeholder,setPlaceholder]=useState(t("Write Placeholder"));
+    const {language}=useContext(PersistContext);
     const [queryText,setQueryText]=useState(t("Write Placeholder"));
+    useEffect(()=>{
+        setTimeout(()=>{
+            setQueryText(t("Write Placeholder"));
+        });
+    },[language]);
     function handleCreate(){
-        // const queryText=document.getElementById("queryText").value;
         if(queryText){
             submitQuery(queryText);
         }

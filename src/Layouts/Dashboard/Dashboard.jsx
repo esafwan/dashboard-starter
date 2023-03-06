@@ -16,10 +16,10 @@ function Dashboard({children}) {
   return (
     <div className="mx-auto flex flex-col space-y-6" lang={language}>      
       {/* <Header setDirection={setLanguage}/> */}
-      <div id="content" className="grid gap-12 md:grid-cols-[210px_2fr]">                
+      <div id="content" className="grid md:grid-cols-[210px_2fr]">                
         <Sidebar />        
         {children?
-          (<div className="pt-4 pr-10">{children}</div>):<Content/>}
+          (<div className="pt-4 mx-12">{children}</div>):<Content/>}
       </div>
       <Footer/>
     </div>
