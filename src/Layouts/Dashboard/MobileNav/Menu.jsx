@@ -19,9 +19,6 @@ const Menu=()=>{
         onClick={()=>setDisplay(false)}>
             <NavVertical/>
         </div>)}
-        {/* <HamburgerMenu>
-            <NavVertical/>
-        </HamburgerMenu> */}
     </div>);
 }
 
