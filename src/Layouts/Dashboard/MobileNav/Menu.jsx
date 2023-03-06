@@ -3,7 +3,7 @@ import { NavVertical } from "../Nav";
 const Menu=()=>{
     const [open,setDisplay]=useState(false);
     return (
-    <div className="md:hidden">
+    <div className="md:hidden flex justify-between">
               <nav onClick={()=>setDisplay((open)=>!open)}>
                   <button className="text-gray-500 w-10 h-10 relative focus:outline-none bg-white">
                       <span className="sr-only">Open main menu</span>
@@ -14,14 +14,11 @@ const Menu=()=>{
                       </div>
                   </button>
               </nav>
-        {open && (<div className="bg-white absolute top-14 pt-4
-        h-screen w-full"
+              <span className={`${open?"inline-block":"hidden"} font-bold text-2xl sm:inline-block my-1.5 mx-6`}>Imagine</span>
+        {open && (<div className="bg-white absolute top-11 h-screen w-full px-4 py-4"
         onClick={()=>setDisplay(false)}>
             <NavVertical/>
         </div>)}
-        {/* <HamburgerMenu>
-            <NavVertical/>
-        </HamburgerMenu> */}
     </div>);
 }
 

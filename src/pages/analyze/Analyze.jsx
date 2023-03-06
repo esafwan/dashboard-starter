@@ -1,16 +1,20 @@
-import React,{useState,useContext, useEffect} from "react";
+import React,{useState,useContext} from "react";
 import PersistContext from "./../../Context/PersistContext";
 import {useTranslation} from "react-i18next";
 import InputQuery from "./components/InputQuery";
+import ResultScreen from "./components/ResultScreen";
 import LoadingScreen from "./../../components/LoadingScreen";
+import MainButton from "./../../components/buttons/MainButton";
+import CopyButton from "./../../components/buttons/CopyButton";
 import {analytics} from "./../../firebase";
 import { logEvent } from "firebase/analytics";
 function Analyze(){
     const {t}=useTranslation();
     const {analyzeResponse,setAnalyzeResponse}=useContext(PersistContext);
     const [loading,setLoading]=useState(false);
+    const [currentPage,setCurrentPage]=useState(1);
     const resetHandler=()=>setAnalyzeResponse("");
-    const submitQuery=(analyzeText)=>{
+    const submitAnalyze=(analyzeText)=>{
         setLoading(true);
         const myHeaders = new Headers();
         myHeaders.append("Authorization", "Basic dGVzdDE6dGVzdDFfcGFzcw==");
@@ -27,11 +31,11 @@ function Analyze(){
             body:JSON.stringify(data),
             redirect:"follow"
         }
-        fetch("https://ml-text-ai.herokuapp.com/analyze",options)
+        fetch("https://ml-text-ai.herokuapp.com/suggest",options)
         .then((res)=>res.json())
         .then((data)=>{
             logEvent(analytics,"analyze",{query:analyzeText});
-            setAnalyzeResponse(data);
+            setAnalyzeResponse(Object.values(data));
             setLoading(false);
         })
         .catch((err)=>console.log(err));
@@ -45,25 +49,55 @@ function Analyze(){
         //     setLoading(false);
         // },1000);
     }
+
+    function pageIncreaseHandler(){
+        if(currentPage+1<=analyzeResponse.length)
+            setCurrentPage((prevState)=>prevState+1);
+    }
+
+    function pageDecreaseHandler(){
+        if(currentPage-1 > 0)
+            setCurrentPage((prevState)=>prevState-1);
+    }
+
     return (
         <div className="flex flex-col overflow-hidden h-full">
             <div className="flex justify-between">
                 <div className="text-2xl font-bold tracking-wide text-slate-900">{t("Suggest")}</div>
                 {(!loading && analyzeResponse) && <MainButton text={t("Modify")} onClickHandler={resetHandler}/>}
             </div>
-             <div className={"flex flex-col border border-black border-dashed rounded-md border-slate-200 mt-12"}>
+            {!loading && analyzeResponse && (
+                <div className="flex justify-end mt-12 text-slate-500">
+                    <div dir="ltr" className="flex">
+                    {`${currentPage} of ${analyzeResponse.length} suggestions`}
+                    <button onClick={pageDecreaseHandler}>
+                        <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                        <path d="M15 6l-6 6l6 6"></path>
+                        </svg>
+                    </button>
+                    <button className="border-l-2" onClick={pageIncreaseHandler}>
+                        <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-chevron-right" width="24" height="24" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                        <path d="M9 6l6 6l-6 6"></path>
+                        </svg>
+                    </button>
+                    </div>
+                </div>)}
+
+
+             <div className={`flex flex-col border border-black border-dashed rounded-md border-slate-200 ${analyzeResponse?"mt-4":"mt-12"}`}>
                 {loading && <LoadingScreen text={`${t("writing")}...`}/>}
                 {(!loading && analyzeResponse) && 
-                <>
-                    <div className="p-2 self-end">
-                        <CopyButton text={analyzeResponse}/>
+                (<>
+                     <div className="p-2 self-end">
+                         <CopyButton text={analyzeResponse[currentPage-1].txt}/>
                     </div>
-                    <ResultScreen
-                    text={analyzeResponse}
-                    setResponseText={setAnalyzeResponse}/>
-                </>}
+                    <ResultScreen text={analyzeResponse[currentPage-1].txt}/>
+                </>)
+                }
                 {(!loading && !analyzeResponse) && <InputQuery 
-                    submitQuery={submitQuery} />}
+                    submitAnalyze={submitAnalyze} />}
              </div>
         </div>
     );
