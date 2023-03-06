@@ -8,13 +8,15 @@ export const PersistProvider=({children})=>{
         localStorage.setItem("language","en");
 
     
-
+    const [user,setUser]=useState(true);
     const [language,setLanguage]=useState(localStorage.getItem("language"));
     const [writeResponseText,setWriteResponseText]=useState("");
     const [analyzeResponse,setAnalyzeResponse]=useState(undefined); //object
     const [imagineResponseUrl,setImagineResponseUrl]=useState("");
 
     return (<PersistContext.Provider value={{
+        user,
+        setUser,
         language,
         setLanguage,
         writeResponseText,
