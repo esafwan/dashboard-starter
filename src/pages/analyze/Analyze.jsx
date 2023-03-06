@@ -2,7 +2,10 @@ import React,{useState,useContext, useEffect} from "react";
 import PersistContext from "./../../Context/PersistContext";
 import {useTranslation} from "react-i18next";
 import InputQuery from "./components/InputQuery";
+import ResultScreen from "./components/ResultScreen";
 import LoadingScreen from "./../../components/LoadingScreen";
+import MainButton from "./../../components/buttons/MainButton";
+import CopyButton from "./../../components/buttons/CopyButton";
 import {analytics} from "./../../firebase";
 import { logEvent } from "firebase/analytics";
 function Analyze(){
@@ -10,7 +13,7 @@ function Analyze(){
     const {analyzeResponse,setAnalyzeResponse}=useContext(PersistContext);
     const [loading,setLoading]=useState(false);
     const resetHandler=()=>setAnalyzeResponse("");
-    const submitQuery=(analyzeText)=>{
+    const submitAnalyze=(analyzeText)=>{
         setLoading(true);
         const myHeaders = new Headers();
         myHeaders.append("Authorization", "Basic dGVzdDE6dGVzdDFfcGFzcw==");
@@ -27,10 +30,11 @@ function Analyze(){
             body:JSON.stringify(data),
             redirect:"follow"
         }
-        fetch("https://ml-text-ai.herokuapp.com/analyze",options)
+        fetch("https://ml-text-ai.herokuapp.com/suggest",options)
         .then((res)=>res.json())
         .then((data)=>{
             logEvent(analytics,"analyze",{query:analyzeText});
+            console.log(data);
             setAnalyzeResponse(data);
             setLoading(false);
         })
@@ -55,15 +59,20 @@ function Analyze(){
                 {loading && <LoadingScreen text={`${t("writing")}...`}/>}
                 {(!loading && analyzeResponse) && 
                 <>
-                    <div className="p-2 self-end">
-                        <CopyButton text={analyzeResponse}/>
-                    </div>
+                {
+                    Object.values(analyzeResponse).map((suggestions,index)=>
+                    (<div key={index}>
+                    {/* <div className="p-2 self-end">
+                        <CopyButton text={suggestions.txt}/>
+                    </div> */}
                     <ResultScreen
-                    text={analyzeResponse}
-                    setResponseText={setAnalyzeResponse}/>
+                    text={suggestions.txt}
+                    setAnalyzeResponse={setAnalyzeResponse}/>
+                    </div>))
+                }
                 </>}
                 {(!loading && !analyzeResponse) && <InputQuery 
-                    submitQuery={submitQuery} />}
+                    submitAnalyze={submitAnalyze} />}
              </div>
         </div>
     );

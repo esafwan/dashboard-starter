@@ -1,4 +1,4 @@
-import React,{useRef,useLayoutEffect, useEffect} from "react";
+import React,{useRef,useEffect} from "react";
 
 function ResultScreen({text,setResponseText}){
     const MIN_TEXTAREA_HEIGHT=35;
