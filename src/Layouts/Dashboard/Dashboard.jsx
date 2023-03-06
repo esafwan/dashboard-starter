@@ -14,13 +14,13 @@ function Dashboard({children}) {
   },[language])
   document.dir=language==="ar"?"rtl":"ltr";
   return (
-    <div className="mx-auto flex flex-col space-y-6" lang={language}>      
-      {/* <Header setDirection={setLanguage}/> */}
+    <div className="mx-auto flex flex-col" lang={language}>      
+      <Header/>
       <div id="content" className="grid md:grid-cols-[210px_2fr]">
-        <Sidebar />        
+        <Sidebar />     
         {/* {children?
           (<div className="pt-4 mx-12">{children}</div>):<Content/>} */}
-          <div className="pt-4 mx-12">
+          <div className="pt-3 mx-6 md:pt-4 md:mx-12">
             {children?children:<Content/>}
           </div>
       </div>
