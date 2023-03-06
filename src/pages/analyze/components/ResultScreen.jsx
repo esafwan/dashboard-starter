@@ -3,7 +3,7 @@ import React,{useRef,useEffect} from "react";
 function ResultScreen({text,setAnalyzeResponse}){
     const MIN_TEXTAREA_HEIGHT=35;
     const textareaRef = useRef(null);
-    const onChange=(event)=>setAnalyzeResponse(event.target.value);
+    // const onChange=(event)=>setAnalyzeResponse(event.target.value);
 
     useEffect(()=>{
         textareaRef.current.style.height="inherit";
@@ -13,7 +13,7 @@ function ResultScreen({text,setAnalyzeResponse}){
     return (
         <div className="flex flex-col" dir="ltr">
              <textarea
-                onChange={onChange}
+                // onChange={onChange}
                 ref={textareaRef}
                 style={{
                     minHeight:MIN_TEXTAREA_HEIGHT,
