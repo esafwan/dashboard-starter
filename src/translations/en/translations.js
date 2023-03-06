@@ -25,8 +25,10 @@ export const TRANSLATIONS_EN={
     "Imagining":"Imagining",
     "Share":"Share",
     "Copy":"Copy",
+    "Copied":"Copied",
     "Write Placeholder":"Write a letter to your best performing employee congratulating him",
     "Analyze Placeholder":"The quick brown fox jumped over the lazy dog",
     "Imagine Placeholder":"A person walking in rain, pastel painting",
-    "Output Language":"Output Language"
+    "Output Language":"Output Language",
+    "Suggest":"Suggest"
 };

@@ -11,7 +11,7 @@ function ResultScreen({text,setResponseText}){
     },[text]);
 
     return (
-        <div className="flex flex-col">
+        <div className="flex flex-col" dir="ltr">
              <textarea
                 onChange={onChange}
                 ref={textareaRef}
@@ -20,7 +20,8 @@ function ResultScreen({text,setResponseText}){
                     boxShadow:"none"
                 }}
                 className="resize-none border-0 outline-none"
-                value={text}/>
+                value={text}
+                />
         </div>
     );
 }
