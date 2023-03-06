@@ -4,12 +4,16 @@ import {signOut,auth} from "./../../../firebase";
 
 function Avatar(){
     const {user}=useContext(PersistContext);
+    const calcEmail=()=>{
+        const maxLength=10;
+        return user.email.substring(0,maxLength)+'...';
+    }
     return(
-        <div className="mb-4 px-1 py-1 bg-white border rounded-lg flex justify-around">
+        <div className="mb-4 px-1.5 py-1 bg-white border rounded-lg flex shadow-sm">
             <img src={user.photoURL} className="w-14 rounded-full"/>
-            <div className="flex flex-col items-end">
-                <span className="font-semibold text-sm">Shahzad</span>
-                <button className="text-sm" onClick={async ()=>await signOut(auth)}>Logout</button>
+            <div className="ml-2">
+                <p className="font-semibold text-sm mt-2" title={user.email}>{calcEmail()}</p>
+                <button className="font-medium text-xs underline decoration-1 decoration-solid decoration-black" onClick={async ()=>await signOut(auth)}>Logout</button>
             </div>
         </div>
     );

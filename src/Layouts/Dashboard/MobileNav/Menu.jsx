@@ -1,5 +1,6 @@
 import {useState} from "react";
 import { NavVertical } from "../Nav";
+import Avatar from "./../Sidebar/Avatar";
 const Menu=()=>{
     const [open,setDisplay]=useState(false);
     return (
