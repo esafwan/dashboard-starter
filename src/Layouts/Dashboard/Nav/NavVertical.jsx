@@ -56,7 +56,7 @@ function NavVertical() {
         </NavLink> */}
         <button className={`${inactive} w-10/12`}
         onClick={()=>setLanguage(language==="en"?"ar":"en")}>
-          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
+          <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
             <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
             <path d="M4 5h7"></path>
             <path d="M9 3v2c0 4.418 -2.239 8 -5 8"></path>
