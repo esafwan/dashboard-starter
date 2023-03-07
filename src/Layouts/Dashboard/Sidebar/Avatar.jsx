@@ -1,9 +1,9 @@
 import {useContext} from "react";
-import PersistContext from "./../../../Context/PersistContext";
+import AuthContext from "./../../../Context/AuthContext";
 import {signOut,auth} from "./../../../firebase";
 
 function Avatar(){
-    const {user}=useContext(PersistContext);
+    const {user}=useContext(AuthContext);
     const calcEmail=()=>{
         const maxLength=10;
         return user.email.substring(0,maxLength)+'...';

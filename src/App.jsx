@@ -1,5 +1,5 @@
 import { useContext} from "react";
-import PersistContext from "./Context/PersistContext";
+import AuthContext from "./Context/AuthContext";
 import {Routes,Route} from "react-router-dom";
 import Gate from "./components/Gate";
 import Dashboard from "./Layouts/Dashboard/Dashboard";
@@ -10,12 +10,10 @@ import Explain from "./pages/explain/Explain";
 import "./App.css";
 
 function App() {
-  const {user}=useContext(PersistContext);
-
+  const {user}=useContext(AuthContext);
   if(!user)
     return <Gate/>
   
-  console.log(user);
   return (
     <Routes>
       <Route path="/" element={
