@@ -7,6 +7,8 @@ export const PersistProvider=({children})=>{
     if(!localStorage.getItem("language"))
         localStorage.setItem("language","en");
 
+    
+
     const [language,setLanguage]=useState(localStorage.getItem("language"));
     const [writeResponseText,setWriteResponseText]=useState("");
     const [analyzeResponse,setAnalyzeResponse]=useState(undefined); //object

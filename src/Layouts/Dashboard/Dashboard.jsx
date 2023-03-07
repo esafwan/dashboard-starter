@@ -14,9 +14,9 @@ function Dashboard({children}) {
   },[language])
   document.dir=language==="ar"?"rtl":"ltr";
   return (
-    <div className="2xl:container mx-auto flex flex-col" lang={language}>      
+    <div className="mx-auto flex flex-col" lang={language}>      
       <Header/>
-      <div id="content" className="grid md:grid-cols-[230px_2fr]">
+      <div id="content" className="grid md:grid-cols-[210px_2fr]">
         <Sidebar />     
         {/* {children?
           (<div className="pt-4 mx-12">{children}</div>):<Content/>} */}
