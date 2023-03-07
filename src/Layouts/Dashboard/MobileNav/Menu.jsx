@@ -14,7 +14,7 @@ const Menu=()=>{
                       </div>
                   </button>
               </nav>
-              <span className={`${open?"inline-block":"hidden"} font-bold text-2xl sm:inline-block my-1.5 mx-6`}>Imagine</span>
+              <span className={`${open?"inline-block":"hidden"} font-bold text-2xl my-1.5 mx-6`}>Imagine</span>
         {open && (<div className="bg-white absolute top-11 h-screen w-full px-4 py-4"
         onClick={()=>setDisplay(false)}>
             <NavVertical/>
