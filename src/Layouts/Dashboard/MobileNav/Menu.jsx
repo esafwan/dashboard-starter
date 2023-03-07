@@ -1,6 +1,8 @@
 import {useState} from "react";
-import { NavVertical } from "../Nav";
+import { NavVertical } from "../Nav"
+import Avatar from "./../Sidebar/Avatar";
 const Menu=()=>{
+    console.log(window.innerWidth);
     const [open,setDisplay]=useState(false);
     return (
     <div className="md:hidden flex justify-between">
@@ -14,10 +16,13 @@ const Menu=()=>{
                       </div>
                   </button>
               </nav>
-              <span className={`${open?"inline-block":"hidden"} font-bold text-2xl sm:inline-block my-1.5 mx-6`}>Imagine</span>
-        {open && (<div className="bg-white absolute top-11 h-screen w-full px-4 py-4"
+              <span className={`${open?"inline-block":"hidden"} font-bold text-2xl my-1.5 mx-6`}>Imagine</span>
+        {open && (<div className="bg-white absolute top-11 h-screen w-full px-4 py-4 flex flex-col justify-between"
         onClick={()=>setDisplay(false)}>
             <NavVertical/>
+                <div className="mb-10">
+                    <Avatar/>
+                </div>
         </div>)}
     </div>);
 }

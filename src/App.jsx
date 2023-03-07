@@ -1,5 +1,7 @@
-// import { useState, useEffect } from "react";
+import { useContext} from "react";
+import AuthContext from "./Context/AuthContext";
 import {Routes,Route} from "react-router-dom";
+import Gate from "./components/Gate";
 import Dashboard from "./Layouts/Dashboard/Dashboard";
 import Write from "./pages/write/Write";
 import Analyze from "./pages/analyze/Analyze";
@@ -8,6 +10,10 @@ import Explain from "./pages/explain/Explain";
 import "./App.css";
 
 function App() {
+  const {user}=useContext(AuthContext);
+  if(!user)
+    return <Gate/>
+  
   return (
     <Routes>
       <Route path="/" element={
