@@ -16,7 +16,7 @@ function Avatar(){
         return user.email.substring(0,maxLength)+"...";
     };
     return(
-        <div className="mb-4 px-1.5 py-1 bg-white border rounded-lg flex justify-between shadow-sm">
+        <div className="mb-4 px-1.5 py-1 bg-white border rounded-lg flex justify-between shadow-sm" dir="ltr">
             <img src={user.photoURL} className="relative inline-block h-12 w-12 rounded-full object-cover object-center"/>
             <div className="ml-2">
                 <p className="font-semibold text-sm mt-2 text-nav-blue-active" title={user.displayName}>{calcName()}</p>
