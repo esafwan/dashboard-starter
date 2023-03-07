@@ -14,9 +14,9 @@ function Gate() {
             <p className="text-sm text-slate-600"></p>
           </div>
         </div>
-        <div className="w-full mb-10 text-center place-content-center ">
+        <div className="w-full mb-10 text-center place-content-center">
           <button
-            className="inline-flex w-full items-center justify-center rounded-lg border bg-white px-5 py-2.5 text-center text-sm font-medium text-black hover:bg-slate-900 focus:outline-none focus:ring-4 focus:ring-[#24292F]/50 disabled:opacity-50  border-slate-200 border-slate-700 hover:text-white
+            className="inline-flex w-11/12 md:w-full items-center justify-center rounded-lg border bg-white px-5 py-2.5 text-center text-sm font-medium text-black hover:bg-slate-900 focus:outline-none focus:ring-4 focus:ring-[#24292F]/50 disabled:opacity-50  border-slate-200 border-slate-700 hover:text-white
             border-solid border-1 border-slate-400 "
             data-bcup-haslogintext="no"
             onClick={logGoogleUser}

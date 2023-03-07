@@ -1,4 +1,4 @@
-import { useContext,useEffect } from "react";
+import { useContext} from "react";
 import PersistContext from "./Context/PersistContext";
 import {Routes,Route} from "react-router-dom";
 import Gate from "./components/Gate";
@@ -7,16 +7,10 @@ import Write from "./pages/write/Write";
 import Analyze from "./pages/analyze/Analyze";
 import Imagine from "./pages/imagine/Imagine";
 import Explain from "./pages/explain/Explain";
-import {auth,onAuthStateChanged} from "./firebase";
 import "./App.css";
 
 function App() {
-  const {user,setUser}=useContext(PersistContext);
-  useEffect(()=>{
-    onAuthStateChanged(auth, (user) => 
-      user?setUser(user):setUser(false)
-    );
-  },[user]);
+  const {user}=useContext(PersistContext);
 
   if(!user)
     return <Gate/>

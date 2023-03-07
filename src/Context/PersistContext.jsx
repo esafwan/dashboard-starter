@@ -1,4 +1,5 @@
-import {createContext,useState} from "react";
+import {createContext,useState,useEffect} from "react";
+import {auth} from "./../firebase";
 
 const PersistContext=createContext();
 
@@ -8,7 +9,15 @@ export const PersistProvider=({children})=>{
         localStorage.setItem("language","en");
 
     
-    const [user,setUser]=useState(true);
+    const [user,setUser]=useState();
+
+    useEffect(()=>{
+        const unsubscribe=auth.onAuthStateChanged((user)=>{
+            setUser(user);
+        })
+        return unsubscribe;
+    },[]);
+
     const [language,setLanguage]=useState(localStorage.getItem("language"));
     const [writeResponseText,setWriteResponseText]=useState("");
     const [analyzeResponse,setAnalyzeResponse]=useState(undefined); //object
