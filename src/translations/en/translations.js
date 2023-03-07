@@ -30,5 +30,6 @@ export const TRANSLATIONS_EN={
     "Analyze Placeholder":"The quick brown fox jumped over the lazy dog",
     "Imagine Placeholder":"A person walking in rain, pastel painting",
     "Output Language":"Output Language",
-    "Suggest":"Suggest"
+    "Suggest":"Suggest",
+    "What do you want?":"What do you want?"
 };

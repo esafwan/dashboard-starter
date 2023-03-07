@@ -30,5 +30,6 @@ export const TRANSLATIONS_ARAB={
     "Analyze Placeholder":"قفز الثعلب البني السريع فوق الكلب الكسول",
     "Imagine Placeholder":"شخص يمشي في المطر ، لوحة باستيل",
     "Output Language":"لغة الإخراج",
-    "Suggest":"يقترح"
+    "Suggest":"يقترح",
+    "What do you want?":"ماذا تريد ؟"
 };
