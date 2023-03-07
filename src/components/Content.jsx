@@ -5,7 +5,7 @@ import {useTranslation} from "react-i18next";
 
 function Content() {
   const {t}=useTranslation();
-  const outlineButtonCss="relative inline-flex h-9 items-center rounded-md border px-4 py-2 text-sm font-medium border-slate-200 bg-white text-brand-900 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-slate-500 focus:ring-offset-2";
+  const outlineButtonCss="w-full max-w-sm md:w-28 md:mx-4 my-2 inline-flex justify-center rounded-md border px-4 py-2 text-sm font-medium border-slate-200 bg-white text-brand-900 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-slate-500 focus:ring-offset-2";
   return (
     <main className="flex w-full flex-1 flex-col overflow-hidden">
       <div className="grid items-start gap-8">
@@ -15,7 +15,7 @@ function Content() {
         {/* empty */}
         <div>
           <div className="flex min-h-[400px] flex-col items-center justify-center rounded-md border border-dashed p-8 text-center animate-in fade-in-50 ml-1 mr-4">
-            <div className="mx-auto flex max-w-[420px] flex-col items-center justify-center text-center">
+            <div className="mx-auto flex w-full flex-col items-center justify-center text-center">
               <div className="flex h-20 w-20 items-center justify-center rounded-full bg-slate-100">
                 <IconBrandUnity size={40} stroke={1.5} />
               </div>
@@ -31,15 +31,15 @@ function Content() {
                
                 Imagine
               </button> */}
-              <div>
+              <div className="w-full mt-8">
                 <Link to="/write"
-                className={outlineButtonCss}>Write</Link>
+                className={outlineButtonCss}>{t("write")}</Link>
                 <Link to="/suggest"
-                className={outlineButtonCss}>Suggest</Link>
+                className={outlineButtonCss}>{t("Suggest")}</Link>
                 <Link to="/explain"
-                className={outlineButtonCss}>Explain</Link>
+                className={outlineButtonCss}>{t("explain")}</Link>
                 <Link to="/imagine"
-                className={outlineButtonCss}>Imagine</Link>
+                className={outlineButtonCss}>{t("Imagine")}</Link>
               </div>
             </div>
           </div>

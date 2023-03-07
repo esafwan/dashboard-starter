@@ -19,7 +19,7 @@ function App() {
       <Route path="/write" element={
         <Dashboard><Write/></Dashboard>
       }/>
-      <Route path="/analyze" element={
+      <Route path="/suggest" element={
         <Dashboard><Analyze/></Dashboard>
       }/>
       <Route path="/explain" element={

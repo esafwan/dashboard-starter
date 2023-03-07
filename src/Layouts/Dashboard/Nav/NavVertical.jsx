@@ -29,7 +29,7 @@ function NavVertical() {
             <IconWand className="mr-2" />
             <span className="mx-3 text-2xl md:text-sm">{t("write")}</span>
         </NavLink>
-        <NavLink to="/analyze" data-bcup-haslogintext="no" className={({isActive})=>isActive?active:inactive}>
+        <NavLink to="/suggest" data-bcup-haslogintext="no" className={({isActive})=>isActive?active:inactive}>
             <Icon3dCubeSphere className="mr-2" />
             <span className="mx-3 text-2xl md:text-sm">{t("Suggest")}</span>
         </NavLink>
@@ -64,7 +64,7 @@ function NavVertical() {
             <path d="M12 20l4 -9l4 9"></path>
             <path d="M19.1 18h-6.2"></path>
           </svg>
-          <span className="mx-5 text-2xl md:text-sm">{language==="en"?"العربية":"English"}</span>
+          <span className={`mx-5 text-2xl ${language==="en"?"md:text-base":"md:text-sm"}`}>{language==="en"?"العربية":"English"}</span>
         </button>
       </div>
     </nav>
