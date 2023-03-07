@@ -1,9 +1,11 @@
 import { IconBrandUnity, IconPlus } from "@tabler/icons";
 import Title from "./Title";
+import {Link} from "react-router-dom";
 import {useTranslation} from "react-i18next";
 
 function Content() {
   const {t}=useTranslation();
+  const outlineButtonCss="relative inline-flex h-9 items-center rounded-md border px-4 py-2 text-sm font-medium border-slate-200 bg-white text-brand-900 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-slate-500 focus:ring-offset-2";
   return (
     <main className="flex w-full flex-1 flex-col overflow-hidden">
       <div className="grid items-start gap-8">
@@ -17,18 +19,28 @@ function Content() {
               <div className="flex h-20 w-20 items-center justify-center rounded-full bg-slate-100">
                 <IconBrandUnity size={40} stroke={1.5} />
               </div>
-              <h2 className="mt-6 text-xl font-semibold">{t("content_none")}</h2>
-              <p className="mt-3 mb-8 text-center text-sm font-normal leading-6 text-slate-700">
+              <h2 className="mt-6 text-xl font-semibold">{t("What do you want?")}</h2>
+              {/* <p className="mt-3 mb-8 text-center text-sm font-normal leading-6 text-slate-700">
                 {t("content_none_description")}
-              </p>
-              <button
+              </p> */}
+              {/* <button
                 className="relative inline-flex h-9 items-center rounded-md border px-4 py-2 text-sm font-medium border-slate-200 bg-white text-brand-900 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-slate-500 focus:ring-offset-2"
                 data-bcup-haslogintext="no"
               >
                  <IconPlus className="mr-2" size={16} strokeWidth={2} />            
                
                 Imagine
-              </button>
+              </button> */}
+              <div>
+                <Link to="/write"
+                className={outlineButtonCss}>Write</Link>
+                <Link to="/suggest"
+                className={outlineButtonCss}>Suggest</Link>
+                <Link to="/explain"
+                className={outlineButtonCss}>Explain</Link>
+                <Link to="/imagine"
+                className={outlineButtonCss}>Imagine</Link>
+              </div>
             </div>
           </div>
         </div>
