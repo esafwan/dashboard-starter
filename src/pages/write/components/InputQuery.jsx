@@ -6,15 +6,16 @@ import MainButton from "./../../../components/buttons/MainButton";
 
 function InputQuery({submitQuery}){
     const {t}=useTranslation();
-    const {language}=useContext(PersistContext);
-    const [queryText,setQueryText]=useState(t("Write Placeholder"));
+    const {language,writeQuery,setWriteQuery}=useContext(PersistContext);
+    const [queryText,setQueryText]=useState(writeQuery);
     useEffect(()=>{
         setTimeout(()=>{
-            setQueryText(t("Write Placeholder"));
+            setQueryText(writeQuery);
         });
     },[language]);
     function handleCreate(){
         if(queryText){
+            setWriteQuery(queryText);
             submitQuery(queryText);
         }
     }

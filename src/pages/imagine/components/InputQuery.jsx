@@ -7,14 +7,16 @@ import MainButton from "./../../../components/buttons/MainButton";
 function InputQuery({submitQuery}){
     const {language}=useContext(PersistContext);
     const {t}=useTranslation();
-    const [queryText,setQueryText]=useState(t("Imagine Placeholder"));
+    const {imagineQuery,setImagineQuery}=useContext(PersistContext)
+    const [queryText,setQueryText]=useState(imagineQuery);
     useEffect(()=>{
         setTimeout(()=>{
-            setQueryText(t("Imagine Placeholder"))
+            setQueryText(imagineQuery)
         });
     },[language]);
     const handleImagine=()=>{
         if(queryText){
+            setImagineQuery(queryText);
             submitQuery(queryText);
         }
     }
