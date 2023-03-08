@@ -5,14 +5,12 @@ import ButtonHolder from "./../../../components/ButtonHolder";
 import MainButton from "./../../../components/buttons/MainButton";
 
 function InputQuery({submitAnalyze}){
-    const {language,suggestQuery,setSuggestQuery}=useContext(PersistContext);
+    const {suggestQuery,setSuggestQuery}=useContext(PersistContext);
     const {t}=useTranslation();
     const [queryText,setQueryText]=useState(suggestQuery)
     useEffect(()=>{
-        setTimeout(()=>{
-            setQueryText(suggestQuery);
-        })
-    },[language])
+       setQueryText(suggestQuery);
+    },[suggestQuery]);
     const handleAnalyze=()=>{
         if(queryText){
             setSuggestQuery(queryText);

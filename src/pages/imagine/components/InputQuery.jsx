@@ -5,15 +5,12 @@ import ButtonHolder from "./../../../components/ButtonHolder";
 import MainButton from "./../../../components/buttons/MainButton";
 
 function InputQuery({submitQuery}){
-    const {language}=useContext(PersistContext);
     const {t}=useTranslation();
     const {imagineQuery,setImagineQuery}=useContext(PersistContext)
     const [queryText,setQueryText]=useState(imagineQuery);
     useEffect(()=>{
-        setTimeout(()=>{
-            setQueryText(imagineQuery)
-        });
-    },[language]);
+        setQueryText(imagineQuery);
+    },[imagineQuery]);
     const handleImagine=()=>{
         if(queryText){
             setImagineQuery(queryText);
