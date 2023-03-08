@@ -20,8 +20,10 @@ function InputQuery({submitAnalyze}){
     return(
         <div className="flex flex-col">
         <textarea id="queryText"
+        lang="en"
+        dir="ltr"
         value={queryText}
-        className="border-0 resize-none h-96 p-5"
+        className="border-0 resize-none h-96 p-5 font-sans"
         style={{"boxShadow":"none"}}
         onChange={(e)=>setQueryText(e.target.value)}/>
         <ButtonHolder>
